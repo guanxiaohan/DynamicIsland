@@ -5,7 +5,7 @@ import sys
 from PySide6.QtCore import (Q_ARG, Q_RETURN_ARG, QByteArray, QMetaObject,
                             QObject, QPoint, QPropertyAnimation, QRectF,
                             QRunnable, QSize, Qt, QThreadPool, QTimer, Signal,
-                            SignalInstance, QParallelAnimationGroup)
+                            SignalInstance, QParallelAnimationGroup, QPointF)
 from PySide6.QtGui import QBrush, QColor, QPainter, QPainterPath, QResizeEvent
 from PySide6.QtWidgets import QApplication, QHBoxLayout, QLabel, QWidget
 
@@ -21,6 +21,7 @@ if BUILDING:
     warnings.filterwarnings("ignore")
 
 DEFAULTSIZE = QSize(300, 30)
+
 
 class DynamicIsland(QWidget):
     notificationSignal = Signal(int, str) # Priority, content
@@ -46,6 +47,13 @@ class DynamicIsland(QWidget):
         self.frameworkAnimationCurve = curve
         self.frameworkAnimation = SpringAnimation(self, _curve_reference, duration=920)
 
+        self.panelProgressBars: dict[str, tuple[int, int]] = {} # curent, max, maximum=0 -> no bar, maximum<0 -> indeterminate
+        self.panelProgressBarRendering: tuple[float, float] = (0, 0) # from width %, to %, using QPointF(x, y) to represent
+        self.panelProgressBarAnimation: QVariantAnimation = QVariantAnimation(self)
+        self.panelProgressBarAnimation.setEasingCurve(QEasingCurve.Type.OutQuad)
+        self.panelProgressBarAnimation.setDuration(500)
+        self.panelProgressBarAnimation.valueChanged.connect(self.rerenderProgressBar)
+
         self.defaultPosition = QRect()
         self.currentScreenState = acquireScreenState()
         self.initialize()
@@ -59,6 +67,30 @@ class DynamicIsland(QWidget):
     def onTestTimer(self):
         self.broadcastNotification(1, "Test")
         # print("Sent")
+
+    def requestProgressBarUpdate(self, current: int, maximum: int, useTransition: bool = True):
+        panel: Panel = self.sender() # type: ignore
+        if current < 0:
+            current = 0
+        if current > maximum:
+            current = maximum
+
+        self.panelProgressBars[panel.panelID] = (current, maximum)
+        if self.sender() == self.panels[self.currentPanelID]:
+            if not useTransition:
+                self.panelProgressBarRendering = (0, current/maximum if maximum!=0 else 0)
+                self.update()
+            else:
+                self.panelProgressBarAnimation.stop()
+                self.panelProgressBarAnimation.setStartValue(QPointF(self.panelProgressBarRendering[0], self.panelProgressBarRendering[1]))
+                self.panelProgressBarAnimation.setEndValue(QPointF(0, current/maximum if maximum!=0 else 0))
+                self.panelProgressBarAnimation.setEasingCurve(QEasingCurve.Type.OutQuad)
+                self.panelProgressBarAnimation.start()
+
+    def rerenderProgressBar(self, val: float = -10000.0):
+        self.panelProgressBarRendering = (self.panelProgressBarAnimation.currentValue().x(),
+                                          self.panelProgressBarAnimation.currentValue().y())
+        self.update()
 
     def _on_dynamic_worker_finished(self, task_id: str, owner, data, exc):
         if owner == self:
@@ -74,12 +106,14 @@ class DynamicIsland(QWidget):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
 
+        # Background
         rect = QRectF(self.rect())
         path = QPainterPath()
         path.addRoundedRect(rect, DEFAULTSIZE.height()//2, DEFAULTSIZE.height()//2)
 
-        gradient = QBrush(QColor(30, 30, 30, 240))
+        gradient = Brushes.backgroundBrush
         painter.fillPath(path, gradient)
+        painter.setClipPath(path)
 
         QWidget.paintEvent(self, event)
 
@@ -92,12 +126,18 @@ class DynamicIsland(QWidget):
                 min(6, (self.currentPanel.PanelSizeHint if self.currentPanel else DEFAULTSIZE).height() // 2 - camera_radius // 2)
         ))
         camera_x, camera_y = center_point.x() - camera_radius // 2, center_point.y()
-        cameraPen = QPen()
-        cameraPen.setWidth(5)
-        cameraPen.setColor(QColor(20, 20, 20, 255))
-        painter.setPen(cameraPen)
+        painter.setPen(Pens.cameraPen)
         painter.setBrush(QColor(80, 80, 80, 255))
         painter.drawEllipse(camera_x, camera_y, camera_radius, camera_radius)
+
+        # Paint progress bar
+        progressHeight = 2
+        Pens.progressPen.setWidth(progressHeight)
+        painter.setPen(Pens.progressPen)
+        roundCornerSpace = DEFAULTSIZE.height() // 4
+        available_width = self.width() - DEFAULTSIZE.height() // 2
+        painter.drawLine(QPoint(int(self.panelProgressBarRendering[0]*available_width + roundCornerSpace), self.height() - progressHeight + 1), 
+                         QPoint(int(self.panelProgressBarRendering[1]*available_width + roundCornerSpace), self.height() - progressHeight + 1))
 
     def registerPanel(self, panel_id: str, panel: Panel, priority: int = 0):
         if panel_id in self.panels:
@@ -109,6 +149,8 @@ class DynamicIsland(QWidget):
         panel.requestShow.connect(self.panelShowRequested)
         panel.requestHide.connect(self.panelHideRequested)
         self.notificationSignal.connect(panel.notificationReceived)
+        self.panelProgressBars[panel_id] = (0, 0)
+        panel.requestProgressBarUpdate.connect(self.requestProgressBarUpdate)
 
     def switchToPanel(self, panel_id: str):
         if panel_id not in self.panels:
@@ -127,6 +169,7 @@ class DynamicIsland(QWidget):
         if panel_id in self.panel_layers:
             self.panel_layers.remove(panel_id)
         self.panel_layers.append(panel_id)
+        self.panels[self.currentPanelID].requestProgressBarUpdate.emit(*self.panelProgressBars[self.currentPanelID])
 
     def switchToPanel_Step2(self, panel_id: str):
         if not self.currentPanel:
@@ -222,5 +265,12 @@ class DynamicIsland(QWidget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setStyleSheet(
+'''
+QLabel {
+    color: white;
+}
+'''
+    )
     island = DynamicIsland()
     app.exec()

@@ -13,7 +13,7 @@ from PySide6.QtGui import (QBrush, QColor, QFont, QGuiApplication, QPainter,
                            QPainterPath, QPen, QPixmap)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QSizePolicy,
                                QWidget)
-from typing import Callable
+from typing import Callable, Any
 
 
 @dataclass
@@ -67,7 +67,18 @@ class Fonts:
         DefaultFont = QFont("Calibri", pointSize=12)
         DefaultFont.setStyleStrategy(QFont.StyleStrategy.PreferAntialias)
         return DefaultFont
-   
+
+class Pens:
+    cameraPen = QPen()
+    cameraPen.setWidth(5)
+    cameraPen.setColor(QColor(20, 20, 20, 255))
+
+    progressPen = QPen(QColor(95, 95, 95, 255))
+    progressPen.setCapStyle(Qt.PenCapStyle.RoundCap)
+
+class Brushes:
+    backgroundBrush = QColor(30, 30, 30, 240)
+    cameraBrush = QColor(80, 80, 80, 255)
 
 @dataclass
 class DynamicProperty:

@@ -7,6 +7,7 @@ from PySide6.QtWidgets import QLabel, QSizePolicy, QWidget, QGraphicsOpacityEffe
 from TaskScheduler import TaskScheduler
 from Utils import *
 import asyncio
+import datetime
 
 class AbstractWidget:
     _task_id: str = ""
@@ -30,6 +31,7 @@ class Panel(QWidget):
     requestResize = Signal()
     requestShow = Signal()
     requestHide = Signal()
+    requestProgressBarUpdate = Signal(int, int) # current, max
 
     PanelSizeHint = QSize(300, 30)
     Top_space = 0
@@ -311,6 +313,13 @@ class MediaPanel(BarPanel):
         self.currentThumbnail: bytes | None = None
         self.currentTitle: str | None = None
         self.currentArtist: str | None = None
+        self.currentStartTime: float = 0
+        self.currentDuration: float = 0
+
+        self.progressBarTimer = QTimer(self)
+        self.progressBarTimer.setInterval(1000)
+        self.progressBarTimer.timeout.connect(lambda: self.requestProgressBarUpdate.emit(time.time() - self.currentStartTime, self.currentDuration))
+        self.progressBarTimer.start()
 
         self.albumCoverLabel.setFixedSize(self.Cover_size, self.Cover_size)
         self.leftLabel.songRetrieved.connect(self.onSongRetrieved)
@@ -332,12 +341,22 @@ class MediaPanel(BarPanel):
             title = data.get("title", "Unknown Title")
             artist = data.get("artist", "Unknown Artist")
             thumbnail = data.get("thumbnail", None)
+            self.currentStartTime, self.currentDuration = (time.time() - (data or {}).get("position_seconds", 0), (data or {}).get("duration_seconds", 0))
+        
+            if not data["is_playing"] and self.progressBarTimer.isActive():
+                self.progressBarTimer.stop()
+            elif data["is_playing"] and not self.progressBarTimer.isActive():
+                self.progressBarTimer.start()
         else:
             title = None
             artist = None
             thumbnail = None
+            self.currentStartTime = 0
+            self.currentDuration = 0
+            self.progressBarTimer.stop()
 
         if not isSongChanged(title, artist, thumbnail):
+            self.requestProgressBarUpdate.emit(time.time() - self.currentStartTime, self.currentDuration)
             return
         
         self.currentTitle = title
@@ -392,18 +411,19 @@ class MediaPanel(BarPanel):
         total_width = int(max(self.Min_width, min(self.Max_width, raw_total)))
 
         new_size_hint = QSize(total_width, self.PanelSizeHint.height())
+        if self.currentTitle != None:
+            self.requestShow.emit()
+        else:
+            self.requestHide.emit()
+
         if new_size_hint.width() != self.PanelSizeHint.width():
             self.PanelSizeHint = new_size_hint
-            if self.currentTitle != None:
-                self.requestShow.emit()
-            else:
-                self.requestHide.emit()
-
             self.requestResize.emit()
+
+        self.requestProgressBarUpdate.emit(time.time() - self.currentStartTime, self.currentDuration)
 
         # 5) 最后把文本应用到 widget（可触发动画）
         self.leftLabel.transitionToText(left_text)
-
         print("Updated Media Label:", self.currentTitle, self.currentArtist)
 
     def calculateSongTextDivision(self, title: str, artist: str, cover_visible: bool) -> tuple[str, str | None]:
@@ -461,6 +481,14 @@ class WeatherPanel(Panel):
     def updateReceived(self, weatherData: dict):
         ...
 
+class SchedulePanel(QWidget):
+    class Schedule:
+        ...
+    def __init__(self):
+        super().__init__()
+
+    
+
 class BasicLabel(QLabel, AbstractWidget):
     def __init__(self, text: str = "", dynamicProperty: DynamicProperty | None = None):
         super().__init__()
@@ -476,7 +504,7 @@ class BasicLabel(QLabel, AbstractWidget):
         self.animation.setEasingCurve(QEasingCurve.Type.Linear)
         self.setText(text)
 
-    def paintEvent(self, event):
+    def paintEvent(self, arg__1):
         painter = QPainter(self)
         pen = painter.pen()
         color = pen.color()
@@ -485,7 +513,7 @@ class BasicLabel(QLabel, AbstractWidget):
         painter.setPen(pen)
         painter.drawText(self.rect(), self.alignment(), self.text())
         
-    def updateReceived(self, data: object | None):
+    def updateReceived(self, data: Any):
         if data is not None:
             self.setText(str(data))
         print("Updated Label - " + self.text())
@@ -587,7 +615,7 @@ class AlternatingLabel(BasicLabel):
     
 class CurrentTimeLabel(BasicLabel):
     def __init__(self, showSecond: bool = True):
-        super().__init__("", DynamicProperty(enabled=True, max_interval=3000, asynchronous=True))
+        super().__init__("", DynamicProperty(enabled=True, max_interval=5000, asynchronous=True))
         self.showSecond = showSecond
         self.setText(getTimeString(second=self.showSecond))
 
@@ -598,7 +626,7 @@ class CurrentMediaLabel(BasicLabel):
     songRetrieved = Signal(object)
 
     def __init__(self):
-        super().__init__("", DynamicProperty(enabled=True, max_interval=4000, asynchronous=False))
+        super().__init__("", DynamicProperty(enabled=True, max_interval=3000, asynchronous=False))
         self.setText("Acquiring Media Info...")
 
     async def updateRetrieval(self):
