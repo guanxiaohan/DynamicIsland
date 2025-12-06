@@ -1,7 +1,7 @@
 # WindowsSMTC.py
 
 import asyncio
-
+import time
 from winsdk.windows.devices.enumeration import (DeviceClass, DeviceInformation, DeviceInformationKind)
 from winsdk.windows.media.control import GlobalSystemMediaTransportControlsSessionManager as MediaManager, GlobalSystemMediaTransportControlsSessionTimelineProperties, GlobalSystemMediaTransportControlsSessionPlaybackStatus
 from winsdk.windows.media.control import (MediaPropertiesChangedEventArgs,
@@ -29,6 +29,7 @@ async def get_media_info():
             artist = info.artist if info else None
             has_cover = info.thumbnail if info else None
             playing = (playback.playback_status == GlobalSystemMediaTransportControlsSessionPlaybackStatus.PLAYING) if playback else False
+            print(title, playing)
             # app_name = session.source_info.display_name if session.source_info else None
             
             if has_cover and title and artist and playing:
@@ -82,6 +83,7 @@ async def get_media_info():
         "thumbnail": None,
         "position_seconds": position_secs,
         "duration_seconds": duration_secs,
+        "last_update": timeline.last_updated_time.timestamp() if timeline else time.time(),
         "is_playing": is_playing,
         "is_paused": is_paused
     }
@@ -107,5 +109,4 @@ def get_media_info_sync():
 
 
 if __name__ == "__main__":
-    # asyncio.get_event_loop().run_until_complete(check_device_usage())
     ...

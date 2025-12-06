@@ -309,6 +309,9 @@ class MediaPanel(BarPanel):
         )
         self.albumCoverLabel = QLabel()
         self.registerDynamicWidget(self.leftLabel)
+        self.musicIcon = GlobalResourceLoader.loadPixmap("music_icon.svg").scaled(self.albumCoverLabel.size(),
+                              Qt.AspectRatioMode.KeepAspectRatio,
+                              Qt.TransformationMode.SmoothTransformation)
 
         self.currentThumbnail: bytes | None = None
         self.currentTitle: str | None = None
@@ -323,7 +326,7 @@ class MediaPanel(BarPanel):
 
         self.albumCoverLabel.setFixedSize(self.Cover_size, self.Cover_size)
         self.leftLabel.songRetrieved.connect(self.onSongRetrieved)
-        self.albumCoverLabel.hide()
+        self.albumCoverLabel.setPixmap(self.musicIcon)
         self.leftLayout.addWidget(self.albumCoverLabel)
         self.leftLayout.addWidget(self.leftLabel)
         self.rightLayout.addWidget(self.rightLabel, alignment=Qt.AlignmentFlag.AlignRight)
@@ -341,7 +344,7 @@ class MediaPanel(BarPanel):
             title = data.get("title", "Unknown Title")
             artist = data.get("artist", "Unknown Artist")
             thumbnail = data.get("thumbnail", None)
-            self.currentStartTime, self.currentDuration = (time.time() - (data or {}).get("position_seconds", 0), (data or {}).get("duration_seconds", 0))
+            self.currentStartTime, self.currentDuration = (time.time() - ((data or {}).get("position_seconds", 0) + (time.time() - (data or {}).get("last_update", 0))), (data or {}).get("duration_seconds", 0))
         
             if not data["is_playing"] and self.progressBarTimer.isActive():
                 self.progressBarTimer.stop()
@@ -384,12 +387,10 @@ class MediaPanel(BarPanel):
                               Qt.TransformationMode.SmoothTransformation),
                               self.Cover_size//2-1)
             )
-            self.albumCoverLabel.show()
             cover_visible = True
         else:
-            self.albumCoverLabel.clear()
-            self.albumCoverLabel.hide()
-            cover_visible = False
+            self.albumCoverLabel.setPixmap(self.musicIcon)
+            cover_visible = True
 
         # 4) 使用将要显示的文本计算像素宽度（**不要使用 widget.text()**）
         fm_left = QFontMetrics(self.leftLabel.font())
@@ -435,7 +436,7 @@ class MediaPanel(BarPanel):
         """
         fm_left = QFontMetrics(self.leftLabel.font())
         fm_right = QFontMetrics(self.rightLabel.font())
-        cover_extra = (self.Cover_size + self.Spacing) if cover_visible else 0
+        cover_extra = (self.Cover_size + self.Spacing)
 
         # 右侧预估宽：Time 与 Artist 之间取较宽者（用于 tentative_total 估算）
         time_text = getTimeString(second=False)

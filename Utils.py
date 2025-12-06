@@ -1,6 +1,7 @@
 # Utils.py
 
 import time
+import os
 from dataclasses import dataclass
 from time import localtime, strftime
 
@@ -86,6 +87,16 @@ class DynamicProperty:
     max_interval: int = 1000  # milliseconds
     asynchronous: bool = False
     updating: bool = False
+
+class ResourceLoader:
+    def __init__(self, resourceRoot: str = "./Resources/") -> None:
+        self.resourceRoot = resourceRoot
+
+    def loadPixmap(self, imageFileName: str) -> QPixmap:
+        path = os.path.join(self.resourceRoot, "Images", imageFileName)
+        if not os.path.exists(path):
+            print(path, "doesn't exist.")
+        return QPixmap(path)
 
 class SpringAnimation(QObject):
     """
@@ -259,3 +270,5 @@ def addRoundCornerToPixmap(pixmap: QPixmap, radius: int, color: QColor = QColor(
         painter.end()
 
     return result
+
+GlobalResourceLoader = ResourceLoader()
