@@ -360,6 +360,7 @@ class MediaPanel(BarPanel):
 
         if not isSongChanged(title, artist, thumbnail):
             self.requestProgressBarUpdate.emit(time.time() - self.currentStartTime, self.currentDuration)
+            self.rightLabel.setTextItem("Time", getTimeString(second=False), False)
             return
         
         self.currentTitle = title

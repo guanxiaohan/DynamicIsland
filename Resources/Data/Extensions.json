@@ -1,0 +1,7 @@
+[
+    {
+        "scriptFile": "./Extensions/ClassSchedulePanel.py",
+        "scriptName": "Class Scheduler",
+        "enabled": true
+    }
+]

@@ -59,6 +59,8 @@ def tryDisconnect(signal: SignalInstance, slot: Callable | None = None):
     except:
         pass
 
+
+
 class Fonts:
     def __init__(self) -> None:
         ...
@@ -74,7 +76,7 @@ class Pens:
     cameraPen.setWidth(5)
     cameraPen.setColor(QColor(20, 20, 20, 255))
 
-    progressPen = QPen(QColor(95, 95, 95, 255))
+    progressPen = QPen(QColor(220, 220, 220, 255))
     progressPen.setCapStyle(Qt.PenCapStyle.RoundCap)
 
 class Brushes:
