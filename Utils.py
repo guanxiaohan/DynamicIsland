@@ -9,9 +9,9 @@ from PySide6.QtCore import (Q_ARG, Q_RETURN_ARG, QByteArray, QEasingCurve,
                             QMetaObject, QObject, QPoint, QPropertyAnimation,
                             QRect, QRectF, QRunnable, QSize, Qt, QThreadPool,
                             QTimer, Signal, SignalInstance, QAbstractAnimation,
-                            QVariantAnimation)
+                            QVariantAnimation, QMargins, QThread)
 from PySide6.QtGui import (QBrush, QColor, QFont, QGuiApplication, QPainter,
-                           QPainterPath, QPen, QPixmap)
+                           QPainterPath, QPen, QPixmap, QIcon)
 from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QSizePolicy,
                                QWidget)
 from typing import Callable, Any
@@ -60,14 +60,13 @@ def tryDisconnect(signal: SignalInstance, slot: Callable | None = None):
         pass
 
 
-
 class Fonts:
     def __init__(self) -> None:
         ...
 
     @staticmethod
     def default() -> QFont:
-        DefaultFont = QFont("Calibri", pointSize=12)
+        DefaultFont = QFont("Titillium Web SemiBold", pointSize=11)
         DefaultFont.setStyleStrategy(QFont.StyleStrategy.PreferAntialias)
         return DefaultFont
 
@@ -99,6 +98,75 @@ class ResourceLoader:
         if not os.path.exists(path):
             print(path, "doesn't exist.")
         return QPixmap(path)
+    
+    def loadPixmapFromSVG(self, imageFileName: str, size: QSize):
+        path = os.path.join(self.resourceRoot, "Images", imageFileName)
+        if not os.path.exists(path):
+            print(path, "doesn't exist.")
+        return QIcon(path).pixmap(size)
+    
+class ExtensionManager(QObject):
+    loadingProgress = Signal(int, int) 
+    finishedLoading = Signal()
+
+    def __init__(self, parent, extensionRoot: str = "./Extensions/"):
+        super().__init__()
+        self._parent = parent
+        self.extensionRoot = extensionRoot
+        from Widgets import Panel
+        self.extensionPanelTypes: dict[str, tuple[type[Panel], int]] = {}
+
+    def loadExtensions(self):
+        paths = [os.path.join(self.extensionRoot, x) 
+                 for x in os.listdir(self.extensionRoot) 
+                 if x.endswith(".py") and os.path.isfile(os.path.join(self.extensionRoot, x))]
+        
+        for i, x in enumerate(paths):
+            try:
+                code = open(x).read()
+                def ret(i, o, p):
+                    self.extensionPanelTypes[i] = (o, p)
+
+                exec(code, {
+                    "DI_registerPanel": ret
+                })
+
+            except Exception as err:
+                print(f"Error occurred when loading {x}: {err.__class__.__name__}: {err}")
+
+            self.loadingProgress.emit(i + 1, len(paths))
+            if i==0:
+                time.sleep(0.9)
+
+    def postInitializePanels(self):
+        for i, x in enumerate(self.extensionPanelTypes):
+            try:
+                self._parent.panels[x].postInitialize()
+                self.loadingProgress.emit(i + 1, len(self.extensionPanelTypes))
+
+            except Exception as err:
+                print(f"Error occurred when loading {x}: {err.__class__.__name__}: {err}")
+                self.loadingProgress.emit(i + 1, len(self.extensionPanelTypes))
+                time.sleep(1)
+
+
+class ExtensionThread(QThread):
+    def __init__(self, manager: ExtensionManager):
+        super().__init__()
+        self.manager = manager
+        self.stage = 0
+
+    def run(self):
+        if self.stage == 0:
+            self.manager.loadExtensions()
+            self.stage = 1
+            self.manager.finishedLoading.emit()
+
+        elif self.stage == 1:
+            self.manager.postInitializePanels()
+            self.stage = 2
+            time.sleep(1)
+            self.manager.finishedLoading.emit()
 
 class SpringAnimation(QObject):
     """

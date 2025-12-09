@@ -1,13 +1,16 @@
 # Widgets.py
 
-from PySide6.QtGui import QPaintEvent, QPixmap, QFontMetrics
+from PySide6.QtGui import QPaintEvent, QPixmap, QFontMetrics, QIcon, QCursor
 from PySide6.QtCore import QEasingCurve, Slot, Property
 from PySide6.QtWidgets import QLabel, QSizePolicy, QWidget, QGraphicsOpacityEffect
 
 from TaskScheduler import TaskScheduler
+from Windows import *
 from Utils import *
 import asyncio
 import datetime
+import ctypes
+import winreg
 
 class AbstractWidget:
     _task_id: str = ""
@@ -31,7 +34,7 @@ class Panel(QWidget):
     requestResize = Signal()
     requestShow = Signal()
     requestHide = Signal()
-    requestProgressBarUpdate = Signal(int, int) # current, max
+    requestProgressBarUpdate = Signal(float, float) # current, max
 
     PanelSizeHint = QSize(300, 30)
     Top_space = 0
@@ -62,6 +65,9 @@ class Panel(QWidget):
         self.mainLayout.setContentsMargins(0, 0, 0, 0)
 
         self.setLayout(self.mainLayout)
+
+    def postInitialize(self) -> None:
+        ...
 
     def _on_dynamic_worker_finished(self, task_id: str, widget: AbstractWidget, data, exc):
         try:
@@ -157,10 +163,6 @@ class BarPanel(Panel):
         self.rightLayout.setContentsMargins(self.Spacing, self.Top_margin, self.Right_margin, self.Bottom_margin)
         self.rightWidget.setLayout(self.rightLayout)
 
-        # schedulePeriodic should call detectMicCam periodically (you already had this)
-        # self.taskScheduler.schedulePeriodic(lambda: self.detectMicCam(), 2000,
-        #                                     is_coroutine=True, owner=self)
-
         # animation state (0.0..1.0)
         self.animation_RightIcon: float = 0.0
 
@@ -172,10 +174,6 @@ class BarPanel(Panel):
         self._icon_before_state: tuple[QColor | None, float] = (None, 0.0)
         self._icon_after_state: tuple[QColor | None, float] = (None, 0.0)
         
-    # async def detectMicCam(self):
-    #     from Windows import check_device_usage  # your module
-    #     return await check_device_usage()
-
     def updateReceived(self, data):
         """
         Panel.taskScheduler -> this will be called with detection result.
@@ -277,10 +275,8 @@ class MainPanel(BarPanel):
     def __init__(self):
         super().__init__()
         
-        self.leftLabel = BasicLabel("Dynamic Island")
-        self.rightLabel = BasicLabel("- Perplexity")
-
-        self.taskScheduler.schedulePeriodic(lambda: getTimeString(None, False), 3000, owner = self)
+        self.leftLabel = BasicLabel("Initializing...")
+        self.rightLabel = BasicLabel("Dynamic Island")
 
         self.leftLayout.addWidget(self.leftLabel)
         self.rightLayout.addWidget(self.rightLabel, alignment=Qt.AlignmentFlag.AlignRight)
@@ -293,10 +289,15 @@ class MainPanel(BarPanel):
         self.rightLabel.setText(data)
         self.leftLabel.transitionToText(txt)
 
+    def startUpdate(self):
+        self.taskScheduler.scheduleOnce(lambda: getTimeString(None, False), owner = self)
+        self.taskScheduler.schedulePeriodic(lambda: getTimeString(None, False), 3000, owner = self)
+
 class MediaPanel(BarPanel):
     PanelSizeHint = (QSize(400, 30))
     Max_width = 560
     Min_width = 300
+    Left_margin = 5
     Cover_size = 22
     Spacing = 6
 
@@ -305,13 +306,11 @@ class MediaPanel(BarPanel):
         
         self.leftLabel = CurrentMediaLabel()
         self.rightLabel = AlternatingLabel(
-            texts={"Time": "", "Artist": ""}, switch_interval=3000, init_id="Time"
+            texts={"Time": getTimeString(second=False)}, switch_interval=3000, init_id="Time"
         )
         self.albumCoverLabel = QLabel()
         self.registerDynamicWidget(self.leftLabel)
-        self.musicIcon = GlobalResourceLoader.loadPixmap("music_icon.svg").scaled(self.albumCoverLabel.size(),
-                              Qt.AspectRatioMode.KeepAspectRatio,
-                              Qt.TransformationMode.SmoothTransformation)
+        self.musicIcon = GlobalResourceLoader.loadPixmapFromSVG("music_icon.svg", QSize(self.Cover_size, self.Cover_size))
 
         self.currentThumbnail: bytes | None = None
         self.currentTitle: str | None = None
@@ -331,9 +330,9 @@ class MediaPanel(BarPanel):
         self.leftLayout.addWidget(self.leftLabel)
         self.rightLayout.addWidget(self.rightLabel, alignment=Qt.AlignmentFlag.AlignRight)
 
-    def updateRightLabel(self, artist: str | None):
-        self.rightLabel.setTextItem("Time", getTimeString(second=False), False)
-        self.rightLabel.setTextItem("Artist", artist, True)
+    # def updateRightLabel(self, artist: str | None):
+    #     self.rightLabel.setTextItem("Time", getTimeString(second=False), False)
+        
 
     @Slot(object)
     def onSongRetrieved(self, data: dict | None):
@@ -376,7 +375,7 @@ class MediaPanel(BarPanel):
 
         # 更新显示
         self.leftLabel.transitionToText(left_text)
-        self.updateRightLabel(right_artist_text)
+        # self.updateRightLabel(right_artist_text)
 
         # 处理封面图
         if self.currentThumbnail:
@@ -408,7 +407,7 @@ class MediaPanel(BarPanel):
         cover_extra = (self.Cover_size + self.Spacing) if cover_visible else 0
 
         left_total = left_w + left_margin + self.Spacing + cover_extra
-        right_total = right_expected_w + right_margin + self.Spacing
+        right_total = right_expected_w + right_margin + self.Spacing + self.Width_rightIcon
         raw_total = max(left_total, right_total)*2 + self.Center_space
         total_width = int(max(self.Min_width, min(self.Max_width, raw_total)))
 
@@ -426,6 +425,7 @@ class MediaPanel(BarPanel):
 
         # 5) 最后把文本应用到 widget（可触发动画）
         self.leftLabel.transitionToText(left_text)
+        self.rightLabel.setTextItem("Artist", right_artist_text, True)
         print("Updated Media Label:", self.currentTitle, self.currentArtist)
 
     def calculateSongTextDivision(self, title: str, artist: str, cover_visible: bool) -> tuple[str, str | None]:
@@ -438,6 +438,7 @@ class MediaPanel(BarPanel):
         fm_left = QFontMetrics(self.leftLabel.font())
         fm_right = QFontMetrics(self.rightLabel.font())
         cover_extra = (self.Cover_size + self.Spacing)
+        right_icon_extra = self.Width_rightIcon
 
         # 右侧预估宽：Time 与 Artist 之间取较宽者（用于 tentative_total 估算）
         time_text = getTimeString(second=False)
@@ -489,7 +490,61 @@ class SchedulePanel(QWidget):
     def __init__(self):
         super().__init__()
 
-    
+
+class FocusPanel(BarPanel):
+    PanelSizeHint = QSize(180, 30)
+    focusStarted = Signal()
+    focusEnded = Signal()
+
+    iconSize = QSize(22, 22)
+
+    def __init__(self):
+        super().__init__()
+
+        self.focusIcon = GlobalResourceLoader.loadPixmapFromSVG("focus_icon.svg", self.iconSize)
+        self.leftLabel = QLabel()
+        self.leftLabel.setPixmap(self.focusIcon)
+        self.leftLayout.addWidget(self.leftLabel)
+        self.rightLabel = BasicLabel("Focus On")
+        self.rightLayout.addWidget(self.rightLabel, alignment=Qt.AlignmentFlag.AlignRight)
+
+        self.fullscreenTimer = QTimer()
+        self.fullscreenTimer.setInterval(3000)
+        self.fullscreenTimer.timeout.connect(self.checkFullscreen)
+
+        self.inFocus = False
+
+        self.emitTimer = QTimer()
+        self.emitTimer.setInterval(1500)
+        self.emitTimer.setSingleShot(True)
+
+    def checkFullscreen(self):
+        '''
+        Check that if the focus mode on Windows is turned on (notifications silent)
+        By accessing Windows API
+        '''
+        # print(is_do_not_disturb_on())
+        # print(is_foreground_window_fullscreen())
+        
+        focus = is_do_not_disturb_on() or is_foreground_window_fullscreen()
+        # print(focus)
+
+        if focus != self.inFocus:
+            self.inFocus = focus
+            self.emitTimer.stop()
+            tryDisconnect(self.emitTimer.timeout)
+
+            if focus:
+                self.rightLabel.transitionToText("Focus On")
+                self.emitTimer.timeout.connect(self.focusStarted.emit)
+                self.requestShow.emit()
+            else:
+                self.rightLabel.setText("Focus Off")
+                self.emitTimer.timeout.connect(self.requestHide.emit)
+                self.focusEnded.emit()
+
+            self.emitTimer.start()
+
 
 class BasicLabel(QLabel, AbstractWidget):
     def __init__(self, text: str = "", dynamicProperty: DynamicProperty | None = None):
@@ -499,6 +554,7 @@ class BasicLabel(QLabel, AbstractWidget):
         self.setContentsMargins(0, 0, 0, 0)
         self.setMargin(0)
         self.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
+        self.setAttribute(Qt.WidgetAttribute.WA_TransparentForMouseEvents, True)
 
         self._opacity = 1.0
 
@@ -570,6 +626,9 @@ class AlternatingLabel(BasicLabel):
             self.switchTimer.setSingleShot(False)
             self.switchTimer.start()
 
+        self.transitionQueueTimer = QTimer()
+        self.transitionQueueTimer.setSingleShot(True)
+
     def switchLabel(self, new_id: str | None = None):
         if new_id and new_id in self.texts:
             self.current_id = new_id
@@ -607,14 +666,32 @@ class AlternatingLabel(BasicLabel):
 
         self.texts[text_id] = new_text
         if text_id == self.current_id:
-            self.transitionToText(new_text) if useTransition else super().setText(new_text)
+
+            if not useTransition and self.transitioning():
+                self.transitionQueueTimer.stop()
+                tryDisconnect(self.transitionQueueTimer.timeout)
+                self.transitionQueueTimer.timeout.connect(lambda txt = new_text: self.setText(txt))
+                self.transitionQueueTimer.start(self.animation.duration() - self.animation.currentTime())
+
+            else:
+                self.transitionToText(new_text) if useTransition else super().setText(new_text)
 
     def removeTextItem(self, text_id: str):
         self.setTextItem(text_id, None)
 
+    def transitioning(self):
+        return self.animation.state() == QAbstractAnimation.State.Running
+
     def transitionToText(self, new_text: str, duration: int = 420):
-        return super().transitionToText(new_text, duration)
-    
+        if not self.transitioning():
+            return super().transitionToText(new_text, duration)
+        
+        self.transitionQueueTimer.stop()
+        tryDisconnect(self.transitionQueueTimer.timeout)
+        self.transitionQueueTimer.timeout.connect(lambda txt = new_text, dur = duration: self.transitionToText(txt, dur))
+        self.transitionQueueTimer.start(self.animation.duration() - self.animation.currentTime() + 10)
+
+
 class CurrentTimeLabel(BasicLabel):
     def __init__(self, showSecond: bool = True):
         super().__init__("", DynamicProperty(enabled=True, max_interval=5000, asynchronous=True))

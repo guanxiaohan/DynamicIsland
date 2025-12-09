@@ -7,6 +7,90 @@ from winsdk.windows.media.control import GlobalSystemMediaTransportControlsSessi
 from winsdk.windows.media.control import (MediaPropertiesChangedEventArgs,
                                           PlaybackInfoChangedEventArgs)
 from winsdk.windows.storage.streams import Buffer, DataReader
+from winsdk.windows.ui.notifications import ToastNotificationManager, ToastNotificationMode
+
+import ctypes
+from ctypes import wintypes
+
+user32 = ctypes.windll.user32
+kernel32 = ctypes.windll.kernel32
+psapi = ctypes.windll.psapi
+
+class RECT(ctypes.Structure):
+    _fields_ = [
+        ("left", ctypes.c_long),
+        ("top", ctypes.c_long),
+        ("right", ctypes.c_long),
+        ("bottom", ctypes.c_long),
+    ]
+
+class MONITORINFO(ctypes.Structure):
+    _fields_ = [
+        ("cbSize", ctypes.c_long),
+        ("rcMonitor", RECT),
+        ("rcWork", RECT),
+        ("dwFlags", ctypes.c_long),
+    ]
+
+def get_process_name_from_hwnd(hwnd: int) -> str:
+    """
+    Returns process name (e.g. 'explorer.exe') of a window.
+    """
+
+    pid = wintypes.DWORD()
+    user32.GetWindowThreadProcessId(hwnd, ctypes.byref(pid))
+    handle = kernel32.OpenProcess(0x0400 | 0x0010, False, pid.value)  # QUERY_INFORMATION | VM_READ
+    if not handle:
+        return ""
+
+    image_filename = (ctypes.c_wchar * 260)()
+    psapi.GetModuleBaseNameW(handle, None, image_filename, 260)
+
+    kernel32.CloseHandle(handle)
+    return image_filename.value.lower()
+
+
+def is_foreground_window_fullscreen(exclude_explorer: bool = True) -> bool:
+    """
+    Returns True if the foreground window is fullscreen
+    and optionally excludes explorer.exe (desktop).
+    """
+
+    hwnd = user32.GetForegroundWindow()
+    if not hwnd:
+        return False
+
+    # Optional exclusion of explorer.exe (desktop / shell)
+    if exclude_explorer:
+        name = get_process_name_from_hwnd(hwnd)
+        if name in ("explorer.exe", "shellexperiencehost.exe"):
+            return False
+
+    # Get window rect
+    rect = RECT()
+    if not user32.GetWindowRect(hwnd, ctypes.byref(rect)):
+        return False
+
+    # Get monitor rect
+    monitor = user32.MonitorFromWindow(hwnd, 1)
+    if not monitor:
+        return False
+
+    mi = MONITORINFO()
+    mi.cbSize = ctypes.sizeof(MONITORINFO)
+    user32.GetMonitorInfoW(monitor, ctypes.byref(mi))
+    m = mi.rcMonitor
+
+    # Tolerance for borders, DPI scaling
+    TOL = 1
+    is_fullscreen = (
+        abs(rect.left - m.left) <= TOL and
+        abs(rect.top - m.top) <= TOL and
+        abs(rect.right - m.right) <= TOL and
+        abs(rect.bottom - m.bottom) <= TOL
+    )
+
+    return is_fullscreen
 
 async def get_current_session():
     manager = await MediaManager.request_async()
@@ -107,6 +191,21 @@ async def get_media_info():
 def get_media_info_sync():
     return asyncio.get_event_loop().run_until_complete(get_media_info())
 
+def is_do_not_disturb_on() -> bool:
+    """
+    Returns True if Windows Do Not Disturb / Focus Assist is ON.
+    Windows 11 and Windows 10 supported.
+    """
+
+    x = ToastNotificationManager.get_default()
+    mode = x.notification_mode if x else ToastNotificationMode.UNRESTRICTED
+
+    # Modes:
+    #   ToastNotificationMode.UNRESTRICTED → notifications allowed
+    #   ToastNotificationMode.PRIORITY_ONLY → DND on
+    #   ToastNotificationMode.ALARMS_ONLY  → DND strongly on
+    #
+    return mode != ToastNotificationMode.UNRESTRICTED
 
 if __name__ == "__main__":
     ...
