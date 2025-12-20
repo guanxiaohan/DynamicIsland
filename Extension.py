@@ -1,3 +1,4 @@
+# Extension.py
 # Header file for DynamicIsland extensions
 # Must write "from Extension import *"" at the beginning of the script.
 
@@ -19,4 +20,6 @@ import time
 # def DI_registerPanel(panel_id: str, panel: Panel, priority: int = 0):
 #     print(1)
 ExtensionRoot = "./Extensions/"
+DI_setExtensionName: typing.Callable[[str], None]
+DI_setExtensionNamespace: typing.Callable[[str], None]
 DI_registerPanel: typing.Callable[[str, type[Panel], int], None]

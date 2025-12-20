@@ -143,6 +143,9 @@ class Panel(QWidget):
         '''Global notification event'''
         ...
 
+    def sysTrayItems(self) -> dict[str, Callable]:
+        return {}
+
 class BarPanel(Panel):
     # Implement a base class for those panels which only have a bar-layout
     # Which have left and right parts divided by a center space ("Camera" drew on main class)
@@ -497,6 +500,8 @@ class FocusPanel(BarPanel):
     focusEnded = Signal()
 
     iconSize = QSize(22, 22)
+    Aware_fullscreen = False
+    Aware_donotdisturb = True
 
     def __init__(self):
         super().__init__()
@@ -526,7 +531,8 @@ class FocusPanel(BarPanel):
         # print(is_do_not_disturb_on())
         # print(is_foreground_window_fullscreen())
         
-        focus = is_do_not_disturb_on() or is_foreground_window_fullscreen()
+        focus = (self.Aware_donotdisturb and is_do_not_disturb_on()) or \
+                (self.Aware_fullscreen and is_foreground_window_fullscreen())
         # print(focus)
 
         if focus != self.inFocus:

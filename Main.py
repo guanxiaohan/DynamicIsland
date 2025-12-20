@@ -43,7 +43,7 @@ class DynamicIsland(QWidget):
         self.trayAction_About = QAction("About")
         self.trayAction_About.triggered.connect(self.about)
         self.trayAction_Exit = QAction("Exit")
-        self.trayAction_Exit.triggered.connect(self.exitApp)
+        self.trayAction_Exit.triggered.connect(self.onExit)
         self.trayMenu.addAction(self.trayAction_About)
         self.trayMenu.addAction(self.trayAction_Exit)
         self.trayIcon.setContextMenu(self.trayMenu)
@@ -77,6 +77,7 @@ class DynamicIsland(QWidget):
         self.mouseHoverAnimation.setDuration(300)
 
         self.defaultPosition = QRect()
+        self.interfaceHidden = False
         self.currentScreenState = acquireScreenState()
         self.initialize()
 
@@ -93,6 +94,32 @@ class DynamicIsland(QWidget):
     def onTestTimer(self):
         self.checkMouse()
 
+    def onExit(self):
+        self.hideInterface()
+        if self.frameworkAnimation._running:
+            self.frameworkAnimation._anim.finished.connect(self.exitApp)
+        else:
+            self.exitApp()
+    
+    def hideInterface(self):
+        if self.interfaceHidden:
+            return
+        
+        self.interfaceHidden = True
+        Hide_height = 2
+        Hide_width = 40
+        pos = QPoint((acquireScreenState().geometry.width() - Hide_width) // 2, -Hide_height-1)
+        endRect = QRect(pos.x() - self.Expand_width, pos.y(), Hide_width + self.Expand_width * 2, Hide_height)
+        
+        self.frameworkAnimation.start(self.geometry(), endRect, duration=920, center_on_width=True)
+
+    def showInterface(self):
+        if not self.interfaceHidden:
+            return
+        
+        self.interfaceHidden = False
+        self.animateToPanel()
+
     def exitApp(self):
         self.hide()
         # TODO: fix thread terminate issues
@@ -104,18 +131,12 @@ class DynamicIsland(QWidget):
         )
 
     def focusModeOn(self):
-        # self.frameworkAnimation.
         print("Focus mode on.")
-        Hide_height = 2
-        Hide_width = 40
-        pos = QPoint((acquireScreenState().geometry.width() - Hide_width) // 2, -Hide_height-1)
-        endRect = QRect(pos.x() - self.Expand_width, pos.y(), Hide_width + self.Expand_width * 2, Hide_height)
-
-        self.frameworkAnimation.start(self.geometry(), endRect, duration=920, center_on_width=True)
-
+        self.hideInterface()
+        
     def focusModeOff(self):
         print("Focus mode off.")
-        self.animateToPanel()
+        self.showInterface()
 
     def mousePressEvent(self, event: QMouseEvent) -> None:
         print("Mouse press received")
@@ -264,6 +285,18 @@ class DynamicIsland(QWidget):
         self.notificationSignal.connect(panel.notificationReceived)
         self.panelProgressBars[panel_id] = (0, 0)
         panel.requestProgressBarUpdate.connect(self.requestProgressBarUpdate)
+        menuItems = panel.sysTrayItems()
+        if menuItems:
+            rootName = self.extensionManager.extensionIds[panel_id.split(".")[0]]
+            rootAction = QAction(rootName)
+            rootMenu = QMenu(self, title=rootName)
+            for x in menuItems:
+                action = QAction(x, rootMenu)
+                action.triggered.connect(menuItems[x])
+                rootMenu.addAction(action)
+
+            rootAction.setMenu(rootMenu)
+            self.trayMenu.addMenu(rootMenu)
 
     def switchToPanel(self, panel_id: str):
         if panel_id not in self.panels:
@@ -315,20 +348,21 @@ class DynamicIsland(QWidget):
 
     def panelShowRequested(self):
         panel: Panel = self.sender() # type: ignore
-        print(panel.panelID, "is requesting to show")
         if panel.panelID != self.currentPanelID:
+            print(panel.panelID, "is requesting to show")
             if panel.panelID not in self.panel_layers:
                 self.panel_layers.append(panel.panelID)
             self.checkPanelLayers()
 
     def panelHideRequested(self):
         panel: Panel = self.sender() # type: ignore
-        print(panel.panelID, "is requesting to hide")
         if len(self.panel_layers) == 1:
             return
         
         try:
-            self.panel_layers.remove(panel.panelID)
+            if panel.panelID in self.panel_layers:
+                print(panel.panelID, "is requesting to hide")
+                self.panel_layers.remove(panel.panelID)
         finally:
             self.checkPanelLayers()
 
@@ -338,6 +372,9 @@ class DynamicIsland(QWidget):
             self.switchToPanel(self.panel_layers[-1])
 
     def animateToPanel(self, panel_id: str | None = None):
+        if self.interfaceHidden:
+            return
+        
         if not panel_id:
             panel_id = self.currentPanelID
             if not panel_id:
@@ -363,36 +400,7 @@ class DynamicIsland(QWidget):
         
         self.currentPanel.setGeometry(QRect(self.Expand_width, 0, self.width() - 2*self.Expand_width, self.height()))
 
-    # # Define BasePosX, BasePosY, BaseWidth, BaseHeight properties for animation
-    # def getBasePosX(self):
-    #     return self.geometry().x()
-    # def setBasePosX(self, x):
-    #     geom = self.geometry()
-    #     geom.setX(x)
-    #     self.setGeometry(geom)
-    # BasePosX = Property(int, getBasePosX, setBasePosX)
-    # def getBasePosY(self):
-    #     return self.geometry().y()
-    # def setBasePosY(self, y):
-    #     geom = self.geometry()
-    #     geom.setY(y)
-    #     self.setGeometry(geom)
-    # BasePosY = Property(int, getBasePosY, setBasePosY)
-    # def getBaseWidth(self):
-    #     return self.geometry().width()
-    # def setBaseWidth(self, w):
-    #     geom = self.geometry()
-    #     geom.setWidth(w)
-    #     self.setGeometry(geom)
-    # BaseWidth = Property(int, getBaseWidth, setBaseWidth)
-    # def getBaseHeight(self):
-    #     return self.geometry().height()
-    # def setBaseHeight(self, h):
-    #     geom = self.geometry()
-    #     geom.setHeight(h)
-    #     self.setGeometry(geom)
-    # BaseHeight = Property(int, getBaseHeight, setBaseHeight)
-
+    
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setApplicationName("DynamicIsland")

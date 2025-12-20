@@ -115,6 +115,7 @@ class ExtensionManager(QObject):
         self.extensionRoot = extensionRoot
         from Widgets import Panel
         self.extensionPanelTypes: dict[str, tuple[type[Panel], int]] = {}
+        self.extensionIds: dict[str, str] = {}
 
     def loadExtensions(self):
         paths = [os.path.join(self.extensionRoot, x) 
@@ -123,13 +124,32 @@ class ExtensionManager(QObject):
         
         for i, x in enumerate(paths):
             try:
+                ExtensionName: list[str] = []
+                ExtensionNamespace: list[str] = []
+                __ExtensionPanels = {}
+
                 code = open(x).read()
                 def ret(i, o, p):
-                    self.extensionPanelTypes[i] = (o, p)
+                    __ExtensionPanels[i] = (o, p)
+
+                def setExtName(x, pointer = ExtensionName):  
+                    pointer.append(x)
+
+                def setNamespace(x, pointer = ExtensionNamespace):
+                    pointer.append(x)
 
                 exec(code, {
-                    "DI_registerPanel": ret
+                    "DI_registerPanel": ret,
+                    "DI_setExtensionNamespace": setNamespace,
+                    "DI_setExtensionName": setExtName
                 })
+
+                if (not ExtensionNamespace) or (not ExtensionName):
+                    print(f"Failed to load extension {x}: Missing keys.")
+                    return
+
+                self.extensionPanelTypes.update({(ExtensionNamespace[0]+"."+x): __ExtensionPanels[x] for x in __ExtensionPanels})
+                self.extensionIds.update({ExtensionNamespace[0]: ExtensionName[0]})
 
             except Exception as err:
                 print(f"Error occurred when loading {x}: {err.__class__.__name__}: {err}")
