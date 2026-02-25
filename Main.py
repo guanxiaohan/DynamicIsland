@@ -12,6 +12,7 @@ from PySide6.QtWidgets import QApplication, QHBoxLayout, QLabel, QWidget, QSyste
 from Utils import *
 from Widgets import *
 
+
 VERSION = "0.0.1"
 BUILDING = True
 if not BUILDING:
@@ -131,15 +132,15 @@ class DynamicIsland(QWidget):
         )
 
     def focusModeOn(self):
-        print("Focus mode on.")
+        logger.info("Focus mode on.")
         self.hideInterface()
         
     def focusModeOff(self):
-        print("Focus mode off.")
+        logger.info("Focus mode off.")
         self.showInterface()
 
     def mousePressEvent(self, event: QMouseEvent) -> None:
-        print("Mouse press received")
+        logger.info("Mouse press received")
         return super().mousePressEvent(event)
     
     def panelClicked(self):
@@ -268,14 +269,15 @@ class DynamicIsland(QWidget):
         Pens.progressPen.setWidth(progressHeight)
         painter.setPen(Pens.progressPen)
         roundCornerSpace = DEFAULTSIZE.height() // 4
-        available_width = self.width() - DEFAULTSIZE.height() // 2
-        painter.drawLine(QPoint(int(self.panelProgressBarRendering[0]*available_width + roundCornerSpace), self.height() - progressHeight + 1), 
-                         QPoint(int(self.panelProgressBarRendering[1]*available_width + roundCornerSpace), self.height() - progressHeight + 1))
+        corner_width_cut = self.Expand_width - self.mouseHoverAnimation.currentValue()
+        available_width = self.width() - DEFAULTSIZE.height() // 2 - 2 * corner_width_cut
+        painter.drawLine(QPoint(int(self.panelProgressBarRendering[0]*available_width + corner_width_cut + roundCornerSpace), self.height() - progressHeight + 1), 
+                         QPoint(int(self.panelProgressBarRendering[1]*available_width + corner_width_cut + roundCornerSpace), self.height() - progressHeight + 1))
 
     def registerPanel(self, panel_id: str, panel: Panel, priority: int = 0):
         if panel_id in self.panels:
-            print(f"Panel ID '{panel_id}' already registered. Overwriting.")
-        print("Registered:", panel_id, priority)
+            logger.info(f"Panel ID '{panel_id}' already registered. Overwriting.")
+        logger.info("Registered: %s - %s", panel_id, priority)
         self.panels[panel_id] = panel
         self.panel_priorities[panel_id] = priority
         panel.panelID = panel_id
@@ -300,7 +302,7 @@ class DynamicIsland(QWidget):
 
     def switchToPanel(self, panel_id: str):
         if panel_id not in self.panels:
-            print(f"Panel ID '{panel_id}' not found.")
+            logger.info(f"Panel ID '{panel_id}' not found.")
             return
         self.currentPanelID = panel_id
         
@@ -332,6 +334,8 @@ class DynamicIsland(QWidget):
     def initialize(self):
         self.registerPanel("DynamicIsland.MainPanel", MainPanel(), 1000000)
         self.registerPanel("DynamicIsland.MediaPanel", MediaPanel(), 1)
+        # Test
+        # self.registerPanel("DynamicIsland.ICodePanel", ICodePanel(), 8)
 
         focusPanel = FocusPanel()
         focusPanel.focusStarted.connect(self.focusModeOn)
@@ -349,7 +353,7 @@ class DynamicIsland(QWidget):
     def panelShowRequested(self):
         panel: Panel = self.sender() # type: ignore
         if panel.panelID != self.currentPanelID:
-            print(panel.panelID, "is requesting to show")
+            logger.info("%s %s", panel.panelID, "is requesting to show")
             if panel.panelID not in self.panel_layers:
                 self.panel_layers.append(panel.panelID)
             self.checkPanelLayers()
@@ -361,7 +365,7 @@ class DynamicIsland(QWidget):
         
         try:
             if panel.panelID in self.panel_layers:
-                print(panel.panelID, "is requesting to hide")
+                logger.info("%s %s", panel.panelID, "is requesting to hide")
                 self.panel_layers.remove(panel.panelID)
         finally:
             self.checkPanelLayers()
@@ -400,6 +404,10 @@ class DynamicIsland(QWidget):
         
         self.currentPanel.setGeometry(QRect(self.Expand_width, 0, self.width() - 2*self.Expand_width, self.height()))
 
+class DynamicIslandManager:
+    def __init__(self) -> None:
+        pass
+        
     
 if __name__ == "__main__":
     app = QApplication(sys.argv)

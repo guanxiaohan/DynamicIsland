@@ -94,7 +94,7 @@ def is_foreground_window_fullscreen(exclude_explorer: bool = True) -> bool:
 
 async def get_current_session():
     manager = await MediaManager.request_async()
-    manager.get_sessions()
+    # manager.get_sessions()
     sessions = manager.get_sessions()
     return sessions
 
@@ -103,17 +103,22 @@ async def get_media_info():
 
     if not sessions or len(sessions) == 0:
         return None
+    
+    session_info_data: list = []
+    session_playback_data: list = []
+    for x in sessions:
+        info = await x.try_get_media_properties_async()
+        session_info_data.append(info)
+        session_playback_data.append(x.get_playback_info())
 
     # Sort sessions by priority: has cover+title+artist > has cover > has title+artist > has app name > None
-    def session_priority(session):
+    def session_priority(info, playback):
         try:
-            info = session.source_info
-            playback = session.get_playback_info()
             title = info.title if info else None
             artist = info.artist if info else None
             has_cover = info.thumbnail if info else None
             playing = (playback.playback_status == GlobalSystemMediaTransportControlsSessionPlaybackStatus.PLAYING) if playback else False
-            print(title, playing)
+            
             # app_name = session.source_info.display_name if session.source_info else None
             
             if has_cover and title and artist and playing:
@@ -131,13 +136,21 @@ async def get_media_info():
         except:
             return 5
 
-    sorted_sessions = sorted(sessions, key=session_priority)
-    session = sorted_sessions[0]
+    priorities = []
+    for x, y in zip(session_info_data, session_playback_data):
+        priority = session_priority(x, y)
+        priorities.append(priority)
+
+    # for x, y in zip(session_info_data, priorities):
+    #     print(x.title, y)
+
+    session_index = priorities.index(min(priorities))
+    session = sessions[session_index]
 
     info = await session.try_get_media_properties_async()
     playback = session.get_playback_info()
     is_playing = (playback.playback_status == GlobalSystemMediaTransportControlsSessionPlaybackStatus.PLAYING) if playback else False
-    is_paused = (playback.playback_status == GlobalSystemMediaTransportControlsSessionPlaybackStatus.PAUSED) if playback else False
+    is_paused = (playback.playback_status != GlobalSystemMediaTransportControlsSessionPlaybackStatus.PLAYING) if playback else False
     current_time = session.get_timeline_properties()
     timeline = current_time
 

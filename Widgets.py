@@ -1,16 +1,10 @@
 # Widgets.py
 
-from PySide6.QtGui import QPaintEvent, QPixmap, QFontMetrics, QIcon, QCursor
-from PySide6.QtCore import QEasingCurve, Slot, Property
-from PySide6.QtWidgets import QLabel, QSizePolicy, QWidget, QGraphicsOpacityEffect
 
 from TaskScheduler import TaskScheduler
 from Windows import *
 from Utils import *
 import asyncio
-import datetime
-import ctypes
-import winreg
 
 class AbstractWidget:
     _task_id: str = ""
@@ -429,7 +423,7 @@ class MediaPanel(BarPanel):
         # 5) 最后把文本应用到 widget（可触发动画）
         self.leftLabel.transitionToText(left_text)
         self.rightLabel.setTextItem("Artist", right_artist_text, True)
-        print("Updated Media Label:", self.currentTitle, self.currentArtist)
+        logger.info("Updated Media Label: %s - %s", self.currentTitle, self.currentArtist)
 
     def calculateSongTextDivision(self, title: str, artist: str, cover_visible: bool) -> tuple[str, str | None]:
         """
@@ -500,7 +494,7 @@ class FocusPanel(BarPanel):
     focusEnded = Signal()
 
     iconSize = QSize(22, 22)
-    Aware_fullscreen = False
+    Aware_fullscreen = True
     Aware_donotdisturb = True
 
     def __init__(self):
@@ -528,12 +522,12 @@ class FocusPanel(BarPanel):
         Check that if the focus mode on Windows is turned on (notifications silent)
         By accessing Windows API
         '''
-        # print(is_do_not_disturb_on())
-        # print(is_foreground_window_fullscreen())
+        # logger.info(is_do_not_disturb_on())
+        # logger.info(is_foreground_window_fullscreen())
         
         focus = (self.Aware_donotdisturb and is_do_not_disturb_on()) or \
                 (self.Aware_fullscreen and is_foreground_window_fullscreen())
-        # print(focus)
+        # logger.info(focus)
 
         if focus != self.inFocus:
             self.inFocus = focus
@@ -580,7 +574,7 @@ class BasicLabel(QLabel, AbstractWidget):
     def updateReceived(self, data: Any):
         if data is not None:
             self.setText(str(data))
-        print("Updated Label - " + self.text())
+        logger.info("Updated Label - " + self.text())
 
     def transitionToText(self, new_text: str, duration: int = 420):
         if new_text == self.text():
@@ -618,6 +612,10 @@ class BasicLabel(QLabel, AbstractWidget):
         return QSize(rect.width() + self.margin()*2, rect.height() + self.margin()*2)
 
     opacity = Property(float, getOpacity, setOpacity)
+
+class ErrorMessagePanel(Panel):
+    def __init__(self):
+        super().__init__()
 
 class AlternatingLabel(BasicLabel):
     def __init__(self, texts: dict[str, str], init_id: str, switch_interval: int = 3000):
@@ -698,6 +696,42 @@ class AlternatingLabel(BasicLabel):
         self.transitionQueueTimer.start(self.animation.duration() - self.animation.currentTime() + 10)
 
 
+class CountdownPanel(Panel):
+    PanelSizeHint = QSize(500, 30)
+    def __init__(self):
+        super().__init__()
+
+        self.leftLabel = BasicLabel("Countdown")
+        self.mainLayout.addWidget(self.leftLabel)
+        self.rightLabel = BasicLabel("In 10min")
+        self.mainLayout.addWidget(self.rightLabel, alignment=Qt.AlignmentFlag.AlignRight)
+
+        self.checkTimer = QTimer()
+        self.checkTimer.setInterval(250)
+        self.checkTimer.timeout.connect(self.updateText)
+        self.checkTimer.start()
+
+        self.countdownTimer = QTimer()
+        self.countdownTimer.setInterval(5000)
+        self.countdownTimer.setSingleShot(True)
+        self.countdownTimer.timeout.connect(self.requestHide.emit)
+        self._last_icode = None
+
+    def updateText(self):
+        cb = QApplication.clipboard()
+        text = cb.text().strip()
+
+        if self._last_icode != 1 and text.startswith("ICode Request") and text.endswith("Pow Notify"):
+            self._last_icode = 1
+            self.rightLabel.setText("Note that steps are reversed and i could change.")
+            self.requestShow.emit()
+            cb.setText("")
+        else:
+            if getattr(self, "_last_icode", None) is not None:
+                self._last_icode = None
+                self.countdownTimer.start()
+            return
+    
 class CurrentTimeLabel(BasicLabel):
     def __init__(self, showSecond: bool = True):
         super().__init__("", DynamicProperty(enabled=True, max_interval=5000, asynchronous=True))

@@ -6,7 +6,7 @@ from Widgets import (Panel, BasicLabel, AbstractWidget, AlternatingLabel, BarPan
 import Widgets
 from Utils import (Pens, Brushes, Fonts, acquireScreenState, generateEasingCurve, 
                    tryDisconnect, getTimeString, GlobalResourceLoader,
-                   DynamicProperty, SpringAnimation)
+                   DynamicProperty, SpringAnimation, logger)
 import Utils
 
 import Windows

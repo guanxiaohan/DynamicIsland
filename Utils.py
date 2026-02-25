@@ -1,21 +1,94 @@
 # Utils.py
 
-import time
+import ctypes
+import datetime
+import json
+import logging
 import os
+import re
+import sys
+import time
+import typing
+import winreg
 from dataclasses import dataclass
 from time import localtime, strftime
+from typing import Any, Callable
 
-from PySide6.QtCore import (Q_ARG, Q_RETURN_ARG, QByteArray, QEasingCurve,
-                            QMetaObject, QObject, QPoint, QPropertyAnimation,
-                            QRect, QRectF, QRunnable, QSize, Qt, QThreadPool,
-                            QTimer, Signal, SignalInstance, QAbstractAnimation,
-                            QVariantAnimation, QMargins, QThread)
-from PySide6.QtGui import (QBrush, QColor, QFont, QGuiApplication, QPainter,
-                           QPainterPath, QPen, QPixmap, QIcon)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QSizePolicy,
-                               QWidget)
-from typing import Callable, Any
+import openpyxl
+import requests
+from PySide6.QtCore import (Q_ARG, Q_RETURN_ARG, Property, QAbstractAnimation,
+                            QByteArray, QEasingCurve, QMargins, QMetaObject,
+                            QObject, QPoint, QPropertyAnimation, QRect, QRectF,
+                            QRunnable, QSize, Qt, QThread, QThreadPool, QTimer,
+                            QVariantAnimation, Signal, SignalInstance, Slot)
+from PySide6.QtGui import (QBrush, QColor, QCursor, QFont, QFontMetrics,
+                           QGuiApplication, QIcon, QPainter, QPainterPath,
+                           QPaintEvent, QPen, QPixmap)
+from PySide6.QtWidgets import (QApplication, QGraphicsOpacityEffect,
+                               QHBoxLayout, QLabel, QSizePolicy, QWidget)
 
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+logger = logging.getLogger()
+# configure logger: console + local file with simple formats
+log_formatter = logging.Formatter("[%(asctime)s|%(levelname)s] %(message)s", "%Y-%m-%d %H:%M:%S")
+
+# console handler
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setLevel(logging.INFO)
+console_handler.setFormatter(log_formatter)
+
+# file handler (placed next to this Utils.py)
+log_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), "DynamicIsland.log")
+file_handler = logging.FileHandler(log_file, encoding="utf-8")
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(log_formatter)
+# truncate local log file to last N lines when it grows too large
+def _truncate_log_file_to_last_lines(path: str, max_lines: int = 500, size_threshold: int = 1_000_000):
+    try:
+        if not os.path.exists(path):
+            return
+        if os.path.getsize(path) <= int(size_threshold):
+            return
+
+        # Read from end in blocks until we have enough lines
+        with open(path, "rb") as f:
+            f.seek(0, os.SEEK_END)
+            file_size = f.tell()
+            if file_size == 0:
+                return
+            block_size = 4096
+            data = bytearray()
+            lines_found = 0
+            pos = file_size
+            while pos > 0 and lines_found <= max_lines:
+                read_size = min(block_size, pos)
+                pos -= read_size
+                f.seek(pos)
+                chunk = f.read(read_size)
+                data[:0] = chunk  # prepend
+                lines_found = data.count(b'\n')
+
+            if lines_found <= max_lines:
+                new_content = bytes(data)
+            else:
+                parts = data.splitlines(keepends=True)
+                new_content = b"".join(parts[-max_lines:])
+
+        # Atomically replace file content with the last N lines
+        with open(path, "wb") as f:
+            f.write(new_content)
+    except Exception:
+        # silently ignore truncation errors on startup
+        pass
+
+# perform truncation before handlers are attached
+_truncate_log_file_to_last_lines(log_file, max_lines=500, size_threshold=1_000_000)
+
+# attach handlers to root logger (reset any existing handlers)
+logger.handlers = []
+logger.setLevel(logging.DEBUG)
+logger.addHandler(console_handler)
+logger.addHandler(file_handler)
 
 @dataclass
 class screenState:
@@ -66,7 +139,8 @@ class Fonts:
 
     @staticmethod
     def default() -> QFont:
-        DefaultFont = QFont("Titillium Web SemiBold", pointSize=11)
+        # DefaultFont = QFont("Titillium Web SemiBold", pointSize=11)
+        DefaultFont = QFont("Calibri", pointSize=12)
         DefaultFont.setStyleStrategy(QFont.StyleStrategy.PreferAntialias)
         return DefaultFont
 
@@ -96,13 +170,13 @@ class ResourceLoader:
     def loadPixmap(self, imageFileName: str) -> QPixmap:
         path = os.path.join(self.resourceRoot, "Images", imageFileName)
         if not os.path.exists(path):
-            print(path, "doesn't exist.")
+            logger.info(path, "doesn't exist.")
         return QPixmap(path)
     
     def loadPixmapFromSVG(self, imageFileName: str, size: QSize):
         path = os.path.join(self.resourceRoot, "Images", imageFileName)
         if not os.path.exists(path):
-            print(path, "doesn't exist.")
+            logger.info(path, "doesn't exist.")
         return QIcon(path).pixmap(size)
     
 class ExtensionManager(QObject):
@@ -145,14 +219,14 @@ class ExtensionManager(QObject):
                 })
 
                 if (not ExtensionNamespace) or (not ExtensionName):
-                    print(f"Failed to load extension {x}: Missing keys.")
+                    logger.info(f"Failed to load extension {x}: Missing keys.")
                     return
 
                 self.extensionPanelTypes.update({(ExtensionNamespace[0]+"."+x): __ExtensionPanels[x] for x in __ExtensionPanels})
                 self.extensionIds.update({ExtensionNamespace[0]: ExtensionName[0]})
 
             except Exception as err:
-                print(f"Error occurred when loading {x}: {err.__class__.__name__}: {err}")
+                logger.info(f"Error occurred when loading {x}: {err.__class__.__name__}: {err}")
 
             self.loadingProgress.emit(i + 1, len(paths))
             if i==0:
@@ -165,7 +239,7 @@ class ExtensionManager(QObject):
                 self.loadingProgress.emit(i + 1, len(self.extensionPanelTypes))
 
             except Exception as err:
-                print(f"Error occurred when loading {x}: {err.__class__.__name__}: {err}")
+                logger.info(f"Error occurred when loading {x}: {err.__class__.__name__}: {err}")
                 self.loadingProgress.emit(i + 1, len(self.extensionPanelTypes))
                 time.sleep(1)
 

@@ -4,10 +4,8 @@ from PySide6.QtCore import QTimer, QObject, QSize, Qt
 from PySide6.QtWidgets import QMessageBox, QFileDialog
 import os
 import datetime
-import enum
 import dataclasses
 import json
-import openpyxl
 from openpyxl import Workbook, load_workbook
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.utils import get_column_letter
@@ -340,6 +338,8 @@ class ClassSchedulePanel(BarPanel):
         def formatTimeToMins(secs: int):
             if secs < 60:
                 return f"{secs}secs"
+            if secs >= 86400:
+                return f"{secs//86400}d {(secs%86400)//3600}h {(secs%3600)//60}min"
             if secs >= 3600:
                 return f"{secs//3600}h {(secs%3600)//60}min"
             return f"{secs//60}min"
@@ -379,7 +379,7 @@ class ClassSchedulePanel(BarPanel):
                 self._warn_param_inconsistencies()
                 return
             except Exception as e:
-                print("Failed to load schedules.json", e)
+                logger.info("Failed to load schedules.json", e)
         # if not found, keep empty
         self.scheduler = self.ClassSchedule(timeTables=[], classFills=[], exceptions=[])
 
@@ -397,7 +397,7 @@ class ClassSchedulePanel(BarPanel):
             base = plist[0]
             for other in plist[1:]:
                 if other != base:
-                    print(f"Warning: class_id {cid} has differing slot-parameters across TimeTables. (e.g. {base} vs {other})")
+                    logger.info(f"Warning: class_id {cid} has differing slot-parameters across TimeTables. (e.g. {base} vs {other})")
                     break
 
     def saveSchedules(self):
@@ -411,7 +411,7 @@ class ClassSchedulePanel(BarPanel):
             with open(schedules_path, "w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
         except Exception as e:
-            print("Failed to save schedules:", e)
+            logger.info("Failed to save schedules:", e)
 
     @staticmethod
     def validate_timeTable_no_overlaps(timeTable: List["ClassSchedulePanel.SingleClassTime"]) -> None:

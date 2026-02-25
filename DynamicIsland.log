@@ -1,0 +1,290 @@
+[2025-12-21 22:49:04 - DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:04 - DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:04 - INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-21 22:49:04 - DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:04 - INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-21 22:49:04 - DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:04 - INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-21 22:49:05 - DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:05 - INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-21 22:49:07 - INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-21 22:49:07 - INFO] Updated Media Label: ⁠⁠Butterflies - Martin Garrix
+[2025-12-21 22:49:30 | DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:30 | DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:30 | INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-21 22:49:30 | DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:30 | INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-21 22:49:30 | DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:30 | INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-21 22:49:31 | DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:31 | INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-21 22:49:33 | INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-21 22:49:33 | INFO] Updated Media Label: ⁠⁠Butterflies - Martin Garrix
+[2025-12-21 22:49:37|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:37|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:37|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-21 22:49:37|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:37|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-21 22:49:37|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:37|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-21 22:49:38|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:49:38|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-21 22:49:40|INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-21 22:49:40|INFO] Updated Media Label: ⁠⁠Butterflies - Martin Garrix
+[2025-12-21 22:51:41|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:51:41|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:51:41|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-21 22:51:41|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:51:41|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-21 22:51:41|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:51:41|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-21 22:51:43|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:51:43|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-21 22:51:46|INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-21 22:51:46|INFO] Updated Media Label: ⁠⁠Butterflies - Martin Garrix
+[2025-12-21 22:52:01|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:52:01|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:52:01|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-21 22:52:01|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:52:01|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-21 22:52:01|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:52:01|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-21 22:52:02|DEBUG] Using proactor: IocpProactor
+[2025-12-21 22:52:02|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-21 22:52:04|INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-21 22:52:04|INFO] Updated Media Label: ⁠⁠Butterflies - Martin Garrix
+[2025-12-21 22:52:46|INFO] Updated Media Label: Changes - Axel Wernberg
+[2025-12-21 23:18:53|INFO] Updated Media Label: Spotify.exe - 
+[2025-12-21 23:18:56|INFO] Updated Media Label: Infinity - Axel Wernberg
+[2025-12-21 23:19:12|INFO] Mouse press received
+[2025-12-21 23:22:41|INFO] Updated Media Label: Obey Your Thirst - Sprite
+[2025-12-21 23:23:05|INFO] Updated Media Label: Find Everything for Everyone - bealls
+[2025-12-21 23:23:38|INFO] Updated Media Label: Listen to The Important Part from SoFi - Social Finance Inc
+[2025-12-21 23:24:02|INFO] Updated Media Label: Spirits - Axel Wernberg
+[2025-12-21 23:27:23|INFO] Updated Media Label: Changes - Axel Wernberg
+[2025-12-27 10:56:41|DEBUG] Using proactor: IocpProactor
+[2025-12-27 10:56:41|DEBUG] Using proactor: IocpProactor
+[2025-12-27 10:56:41|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-27 10:56:41|DEBUG] Using proactor: IocpProactor
+[2025-12-27 10:56:41|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-27 10:56:41|DEBUG] Using proactor: IocpProactor
+[2025-12-27 10:56:41|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-27 10:56:42|DEBUG] Using proactor: IocpProactor
+[2025-12-27 10:56:42|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-27 10:56:44|INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-27 10:56:44|INFO] Updated Media Label: Opposites - Vicetone
+[2025-12-27 10:56:59|INFO] Updated Media Label: Kaleidoscope (feat. Grace Grundy) - Vicetone
+[2025-12-27 10:57:23|INFO] Updated Media Label: Collide (feat. Rosi Golan) - Vicetone
+[2025-12-27 10:59:44|INFO] Updated Media Label: Won't Let You Go - Vicetone
+[2025-12-27 11:42:33|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:42:33|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:42:33|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-27 11:42:33|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:42:33|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-27 11:42:33|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:42:33|INFO] Registered: DynamicIsland.ICodePanel - 8
+[2025-12-27 11:42:33|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:42:33|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-27 11:42:35|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:42:35|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-27 11:42:36|INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-27 11:42:36|INFO] Updated Media Label: Anywhere I Go - Vicetone
+[2025-12-27 11:43:57|INFO] Updated Media Label: Over Too Soon - Vicetone
+[2025-12-27 11:47:10|INFO] Updated Media Label: Feels Like - Vicetone
+[2025-12-27 11:49:48|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:49:48|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:49:48|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-27 11:49:48|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:49:48|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-27 11:49:48|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:49:48|INFO] Registered: DynamicIsland.ICodePanel - 8
+[2025-12-27 11:49:48|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:49:48|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-27 11:49:49|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:49:49|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-27 11:49:51|INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-27 11:49:51|INFO] Updated Media Label: Feels Like - Vicetone
+[2025-12-27 11:50:22|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:50:22|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:50:22|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-27 11:50:22|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:50:22|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-27 11:50:22|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:50:22|INFO] Registered: DynamicIsland.ICodePanel - 8
+[2025-12-27 11:50:22|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:50:22|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-27 11:50:24|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:50:24|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-27 11:50:25|INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-27 11:50:25|INFO] Updated Media Label: Outta My Mind - Vicetone
+[2025-12-27 11:51:02|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:51:02|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:51:02|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-27 11:51:02|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:51:02|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-27 11:51:02|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:51:02|INFO] Registered: DynamicIsland.ICodePanel - 8
+[2025-12-27 11:51:02|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:51:02|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-27 11:51:04|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:51:04|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-27 11:51:05|INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-27 11:51:05|INFO] Updated Media Label: Outta My Mind - Vicetone
+[2025-12-27 11:52:06|INFO] DynamicIsland.ICodePanel is requesting to show
+[2025-12-27 11:52:15|INFO] DynamicIsland.ICodePanel is requesting to show
+[2025-12-27 11:52:44|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:52:44|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:52:44|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-27 11:52:44|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:52:44|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-27 11:52:44|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:52:44|INFO] Registered: DynamicIsland.ICodePanel - 8
+[2025-12-27 11:52:44|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:52:44|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-27 11:52:45|DEBUG] Using proactor: IocpProactor
+[2025-12-27 11:52:45|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-27 11:52:47|INFO] DynamicIsland.MediaPanel is requesting to show
+[2025-12-27 11:52:47|INFO] Updated Media Label: Outta My Mind - Vicetone
+[2025-12-27 11:53:03|INFO] DynamicIsland.ICodePanel is requesting to show
+[2025-12-27 11:53:14|INFO] DynamicIsland.ICodePanel is requesting to show
+[2025-12-27 11:53:24|INFO] DynamicIsland.ICodePanel is requesting to show
+[2025-12-27 11:53:41|INFO] Updated Media Label: Always Running - Vicetone
+[2025-12-27 11:56:41|INFO] Updated Media Label: Die Young (Club Mix) - Vicetone
+[2025-12-27 11:59:14|INFO] Updated Media Label: The World Has A Heartbeat - Vicetone
+[2025-12-27 11:59:52|INFO] DynamicIsland.ICodePanel is requesting to show
+[2025-12-27 12:00:01|INFO] DynamicIsland.ICodePanel is requesting to show
+[2025-12-31 00:25:01|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:25:01|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:25:01|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-31 00:25:01|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:25:01|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-31 00:25:01|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:25:01|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-31 00:25:02|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:25:02|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-31 00:25:02|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:25:02|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2025-12-31 00:25:10|INFO] CountdownPanel.SchedulePanel is requesting to show
+[2025-12-31 00:39:06|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:06|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:06|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-31 00:39:06|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:06|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-31 00:39:06|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:06|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-31 00:39:07|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:07|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-31 00:39:07|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:07|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2025-12-31 00:39:14|INFO] CountdownPanel.SchedulePanel is requesting to show
+[2025-12-31 00:39:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:36|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-31 00:39:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:36|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-31 00:39:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:36|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-31 00:39:37|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:37|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-31 00:39:37|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:39:37|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2025-12-31 00:39:45|INFO] CountdownPanel.SchedulePanel is requesting to show
+[2025-12-31 00:51:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:51:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:51:36|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2025-12-31 00:51:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:51:36|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2025-12-31 00:51:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:51:36|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2025-12-31 00:51:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:51:36|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2025-12-31 00:51:36|DEBUG] Using proactor: IocpProactor
+[2025-12-31 00:51:36|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2025-12-31 00:51:46|INFO] CountdownPanel.SchedulePanel is requesting to show
+[2026-01-08 23:15:32|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:15:32|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:15:32|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-01-08 23:15:32|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:15:32|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-01-08 23:15:32|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:15:32|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-01-08 23:15:33|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:15:33|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-01-08 23:15:33|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:15:33|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-01-08 23:15:35|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-01-08 23:15:35|INFO] Updated Media Label: Collide (feat. Rosi Golan) - Vicetone
+[2026-01-08 23:15:51|INFO] Mouse press received
+[2026-01-08 23:16:07|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-01-08 23:16:09|INFO] Focus mode on.
+[2026-01-08 23:16:10|INFO] Focus mode off.
+[2026-01-08 23:16:25|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-01-08 23:16:27|INFO] Focus mode on.
+[2026-01-08 23:16:31|INFO] Focus mode off.
+[2026-01-08 23:16:37|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-01-08 23:16:39|INFO] Focus mode on.
+[2026-01-08 23:16:46|INFO] Focus mode off.
+[2026-01-08 23:16:49|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-01-08 23:16:51|INFO] Focus mode on.
+[2026-01-08 23:16:52|INFO] Focus mode off.
+[2026-01-08 23:16:55|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-01-08 23:16:57|INFO] Focus mode on.
+[2026-01-08 23:17:07|INFO] Focus mode off.
+[2026-01-08 23:17:31|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-01-08 23:17:33|INFO] Focus mode on.
+[2026-01-08 23:17:34|INFO] Focus mode off.
+[2026-01-08 23:17:43|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-01-08 23:17:45|INFO] Focus mode on.
+[2026-01-08 23:17:46|INFO] Focus mode off.
+[2026-01-08 23:18:05|INFO] CountdownPanel.SchedulePanel is requesting to show
+[2026-01-08 23:19:23|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:19:23|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:19:23|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-01-08 23:19:23|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:19:23|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-01-08 23:19:23|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:19:23|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-01-08 23:19:24|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:19:24|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-01-08 23:19:24|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:19:24|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-01-08 23:19:26|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-01-08 23:19:26|INFO] Updated Media Label: Collide (feat. Rosi Golan) - Vicetone
+[2026-01-08 23:19:58|INFO] CountdownPanel.SchedulePanel is requesting to show
+[2026-01-08 23:21:39|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:21:39|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:21:39|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-01-08 23:21:39|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:21:39|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-01-08 23:21:39|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:21:39|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-01-08 23:21:40|INFO] Error occurred when loading ./Extensions/CountdownPanel.py: SyntaxError: unmatched ')' (<string>, line 52)
+[2026-01-08 23:21:40|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:21:40|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-01-08 23:21:42|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-01-08 23:21:42|INFO] Updated Media Label: Collide (feat. Rosi Golan) - Vicetone
+[2026-01-08 23:22:01|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:22:01|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:22:01|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-01-08 23:22:01|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:22:01|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-01-08 23:22:01|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:22:01|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-01-08 23:22:02|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:22:02|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-01-08 23:22:02|DEBUG] Using proactor: IocpProactor
+[2026-01-08 23:22:02|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-01-08 23:22:04|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-01-08 23:22:04|INFO] Updated Media Label: Collide (feat. Rosi Golan) - Vicetone
+[2026-01-08 23:22:14|INFO] CountdownPanel.SchedulePanel is requesting to show
+[2026-02-15 08:38:50|DEBUG] Using proactor: IocpProactor
+[2026-02-15 08:38:50|DEBUG] Using proactor: IocpProactor
+[2026-02-15 08:38:50|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-02-15 08:38:50|DEBUG] Using proactor: IocpProactor
+[2026-02-15 08:38:50|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-02-15 08:38:50|DEBUG] Using proactor: IocpProactor
+[2026-02-15 08:38:51|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-02-15 08:38:52|DEBUG] Using proactor: IocpProactor
+[2026-02-15 08:38:52|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-02-15 08:38:52|DEBUG] Using proactor: IocpProactor
+[2026-02-15 08:38:52|INFO] Registered: CountdownPanel.SchedulePanel - 6
