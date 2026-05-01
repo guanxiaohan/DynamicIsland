@@ -1,6 +1,8 @@
 # Widgets.py
 
 
+from PySide6.QtGui import QResizeEvent
+
 from TaskScheduler import TaskScheduler
 from Windows import *
 from Utils import *
@@ -57,8 +59,8 @@ class Panel(QWidget):
         self.setContentsMargins(self.Left_margin, self.Top_margin, self.Right_margin, self.Bottom_margin)
         self.mainLayout = QHBoxLayout()
         self.mainLayout.setContentsMargins(0, 0, 0, 0)
-
-        self.setLayout(self.mainLayout)
+        self.mainWidget = QWidget(self)
+        self.mainWidget.setLayout(self.mainLayout)
 
     def postInitialize(self) -> None:
         ...
@@ -69,6 +71,13 @@ class Panel(QWidget):
         except Exception:
             import traceback
             traceback.print_exc()
+
+    def reposition(self):
+        self.mainWidget.setGeometry(QRect(0, 0, self.width(), self.height()))
+
+    def resizeEvent(self, event: QResizeEvent) -> None:
+        self.reposition()
+        return super().resizeEvent(event)
 
     def registerDynamicWidget(self, widget: AbstractWidget):
         self.dynamicUpdateQueue.append(widget)
@@ -184,6 +193,7 @@ class BarPanel(Panel):
         self.iconStateChanged(data["color"])
 
     def reposition(self):
+        super().reposition()
         total_width = self.width()
         center_space = self.Center_space
         left_width = (total_width - center_space) // 2
@@ -292,7 +302,7 @@ class MainPanel(BarPanel):
 
 class MediaPanel(BarPanel):
     PanelSizeHint = (QSize(400, 30))
-    Max_width = 560
+    Max_width = 1440
     Min_width = 300
     Left_margin = 5
     Cover_size = 22
@@ -494,8 +504,8 @@ class FocusPanel(BarPanel):
     focusEnded = Signal()
 
     iconSize = QSize(22, 22)
-    Aware_fullscreen = True
-    Aware_donotdisturb = True
+    Aware_fullscreen = False
+    Aware_donotdisturb = False
 
     def __init__(self):
         super().__init__()

@@ -1,0 +1,40 @@
+{
+  "theme": "表情包是否增强了当代人的表达能力",
+  "stages": [
+    {
+      "name": "立论 Construction",
+      "duration": 180,
+      "mode": "split"
+    },
+    {
+      "name": "驳辩 Rebuttal",
+      "duration": 120,
+      "mode": "split"
+    },
+    {
+      "name": "对辩 Crossfire",
+      "duration": 90,
+      "mode": "split"
+    },
+    {
+      "name": "质询 Examination",
+      "duration": 90,
+      "mode": "split"
+    },
+    {
+      "name": "阶段小结 Summary",
+      "duration": 120,
+      "mode": "split"
+    },
+    {
+      "name": "自由辩论 Free Debate",
+      "duration": 240,
+      "mode": "split"
+    },
+    {
+      "name": "总结陈词 Closing",
+      "duration": 180,
+      "mode": "split"
+    }
+  ]
+}

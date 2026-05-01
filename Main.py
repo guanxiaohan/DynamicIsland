@@ -8,6 +8,7 @@ from PySide6.QtCore import (Q_ARG, Q_RETURN_ARG, QByteArray, QMetaObject,
                             SignalInstance, QParallelAnimationGroup, QPointF)
 from PySide6.QtGui import QBrush, QCloseEvent, QColor, QMouseEvent, QPainter, QPainterPath, QResizeEvent, QAction
 from PySide6.QtWidgets import QApplication, QHBoxLayout, QLabel, QWidget, QSystemTrayIcon, QMenu, QMessageBox
+from PySide6.QtMultimedia import QSoundEffect
 
 from Utils import *
 from Widgets import *
@@ -31,8 +32,14 @@ class DynamicIsland(QWidget):
 
     def __init__(self):
         super().__init__()
-        self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.Tool)
+        self.setWindowFlags(
+            Qt.WindowType.FramelessWindowHint |
+            Qt.WindowType.Tool |
+            Qt.WindowType.WindowStaysOnTopHint
+        )
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+        self.setAttribute(Qt.WidgetAttribute.WA_NoSystemBackground)
+        self.setAttribute(Qt.WidgetAttribute.WA_StyledBackground)
         self.setContentsMargins(0, 0, 0, 0)
 
         self.taskScheduler = TaskScheduler(parent=self, max_workers=2, use_async_loop=True)
@@ -69,13 +76,19 @@ class DynamicIsland(QWidget):
         self.panelProgressBarAnimation.setEasingCurve(QEasingCurve.Type.OutQuad)
         self.panelProgressBarAnimation.setDuration(500)
         self.panelProgressBarAnimation.valueChanged.connect(self.rerenderProgressBar)
-
+        
         self.mouseHoverAnimation = QVariantAnimation(self)
         self.mouseHoverAnimation.setEasingCurve(QEasingCurve.Type.OutQuad)
         self.mouseHoverAnimation.valueChanged.connect(self.update)
         self.mouseHoverAnimation.setStartValue(0)
         self.mouseHoverAnimation.setEndValue(-1)
         self.mouseHoverAnimation.setDuration(300)
+
+        self.setStyleSheet("""
+            DynamicIsland {
+                border: none;
+            }
+        """)
 
         self.defaultPosition = QRect()
         self.interfaceHidden = False
@@ -91,6 +104,7 @@ class DynamicIsland(QWidget):
         self.extensionManager = ExtensionManager(self)
         self.extensionThread = ExtensionThread(self.extensionManager)
         self.loadExtension()
+
 
     def onTestTimer(self):
         self.checkMouse()
@@ -201,22 +215,42 @@ class DynamicIsland(QWidget):
     @Slot(float, float)
     def requestProgressBarUpdate(self, current: float, maximum: float, useTransition: bool = True):
         panel: Panel = self.sender() # type: ignore
+        indeterminate: bool = False
         if current < 0:
             current = 0
         if current > maximum:
             current = maximum
+        if maximum < 0:
+            indeterminate: bool = True
+
 
         self.panelProgressBars[panel.panelID] = (current, maximum)
         if self.sender() == self.panels[self.currentPanelID]:
             if not useTransition:
                 self.panelProgressBarRendering = (0, current/maximum if maximum!=0 else 0)
                 self.update()
+                return
+            
+            self.panelProgressBarAnimation.stop()
+            if self.panelProgressBarAnimation.endValue() == QPointF(1.0, 1.0):
+                self.panelProgressBarAnimation.setStartValue(QPointF(0.0, 0.0))
+                self.panelProgressBarRendering = (0, 0)
             else:
-                self.panelProgressBarAnimation.stop()
                 self.panelProgressBarAnimation.setStartValue(QPointF(self.panelProgressBarRendering[0], self.panelProgressBarRendering[1]))
+
+            if not indeterminate:
                 self.panelProgressBarAnimation.setEndValue(QPointF(0, current/maximum if maximum!=0 else 0))
                 self.panelProgressBarAnimation.setEasingCurve(QEasingCurve.Type.OutQuad)
-                self.panelProgressBarAnimation.start()
+            else:
+                if self.panelProgressBarRendering[1] < 0.25:
+                    self.panelProgressBarAnimation.setEndValue(QPointF(0.25, 0.75))
+                    self.panelProgressBarAnimation.setEasingCurve(QEasingCurve.Type.InQuad)
+                else:
+                    self.panelProgressBarAnimation.setEndValue(QPointF(1.0, 1.0))
+                    self.panelProgressBarAnimation.setEasingCurve(QEasingCurve.Type.OutQuad)
+
+            self.panelProgressBarAnimation.start()
+
 
     def rerenderProgressBar(self, val: float = -10000.0):
         self.panelProgressBarRendering = (self.panelProgressBarAnimation.currentValue().x(),
@@ -333,7 +367,7 @@ class DynamicIsland(QWidget):
 
     def initialize(self):
         self.registerPanel("DynamicIsland.MainPanel", MainPanel(), 1000000)
-        self.registerPanel("DynamicIsland.MediaPanel", MediaPanel(), 1)
+        # self.registerPanel("DynamicIsland.MediaPanel", MediaPanel(), 1)
         # Test
         # self.registerPanel("DynamicIsland.ICodePanel", ICodePanel(), 8)
 

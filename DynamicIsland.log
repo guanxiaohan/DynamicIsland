@@ -288,3 +288,839 @@
 [2026-02-15 08:38:52|INFO] Registered: ClassScheduler.SchedulePanel - 5
 [2026-02-15 08:38:52|DEBUG] Using proactor: IocpProactor
 [2026-02-15 08:38:52|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-02-25 21:31:20|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:31:20|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:31:20|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-02-25 21:31:20|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:31:20|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-02-25 21:31:20|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:31:20|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-02-25 21:31:21|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:31:21|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-02-25 21:31:21|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:31:21|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-02-25 21:31:25|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-02-25 21:31:25|INFO] Updated Media Label: きらめきカフェタイム - ココア (CV: 佐倉綾音), チノ (CV: 水瀬いのり), リゼ (CV: 種田梨沙)
+[2026-02-25 21:32:02|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:32:02|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:32:02|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-02-25 21:32:02|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:32:02|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-02-25 21:32:02|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:32:02|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-02-25 21:32:03|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:32:03|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-02-25 21:32:03|DEBUG] Using proactor: IocpProactor
+[2026-02-25 21:32:03|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-02-25 21:32:05|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-02-25 21:32:05|INFO] Updated Media Label: きらめきカフェタイム - ココア (CV: 佐倉綾音), チノ (CV: 水瀬いのり), リゼ (CV: 種田梨沙)
+[2026-02-25 21:32:14|INFO] Updated Media Label: 日常デコレーション - Petit Rabbit's
+[2026-02-25 21:32:17|INFO] Updated Media Label: アイキャッチ1 - 川田瑠夏
+[2026-02-25 21:32:20|INFO] Updated Media Label: 魔法少女チノ - チノ (CV: 水瀬いのり)
+[2026-02-25 21:32:23|INFO] Updated Media Label: 小さな恋のうた - 高木さん (CV: 高橋李依)
+[2026-02-25 21:32:26|INFO] Updated Media Label: 涙はみせない - こみっくがーるず (赤尾ひかる, 本渡楓, 大西沙織, 高橋李依)
+[2026-02-25 21:32:44|INFO] Updated Media Label: アイキャッチ1 - 末廣健一郎
+[2026-02-25 21:32:47|INFO] Updated Media Label: Memories - こみっくがーるず (赤尾ひかる, 本渡楓, 大西沙織, 高橋李依)
+[2026-02-25 21:32:50|INFO] Updated Media Label: きらめきカフェタイム - ココア (CV: 佐倉綾音), チノ (CV: 水瀬いのり), リゼ (CV: 種田梨沙)
+[2026-02-25 21:32:56|INFO] Updated Media Label: Jumping!! - Rhodanthe*
+[2026-02-25 21:33:02|INFO] Updated Media Label: 青き此方 - YURiKA
+[2026-02-25 21:33:11|INFO] Updated Media Label: 114514 - Misty Rain, Drifting Snow
+[2026-02-25 21:33:14|INFO] Updated Media Label: きらめきカフェタイム - ココア (CV: 佐倉綾音), チノ (CV: 水瀬いのり), リゼ (CV: 種田梨沙)
+[2026-02-25 21:33:20|INFO] Updated Media Label: シュワシュワ - Three∞Loop
+[2026-02-25 21:33:26|INFO] Updated Media Label: きらめきカフェタイム - ココア (CV: 佐倉綾音), チノ (CV: 水瀬いのり), リゼ (CV: 種田梨沙)
+[2026-02-25 21:33:29|INFO] Updated Media Label: Jumping!! - Rhodanthe*
+[2026-02-25 21:37:32|INFO] Updated Media Label: 気ままな天使たち - わたてん☆5
+[2026-02-25 21:41:41|INFO] Updated Media Label: はじまりいろスプラッシュ - 大宮忍 (CV: 西明日香)
+[2026-02-25 21:42:23|INFO] Updated Media Label: セカイがカフェになっちゃった!～Petit Rabbit's Ver.～ - Petit Rabbit's (ココア (CV: 佐倉綾音), チノ (CV: 水瀬いのり), リゼ (CV: 種田梨沙), 千夜 (CV: 佐藤聡美), シャロ (CV: 内田真礼))
+[2026-02-25 21:43:14|INFO] Updated Media Label: 涙はみせない - こみっくがーるず (赤尾ひかる, 本渡楓, 大西沙織, 高橋李依)
+[2026-02-25 21:47:23|INFO] Updated Media Label: アイキャッチ1 - 末廣健一郎
+[2026-02-25 21:47:32|INFO] Updated Media Label: Jumping!! - Rhodanthe*
+[2026-02-25 21:50:10|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-02-25 21:50:11|INFO] Focus mode on.
+[2026-02-25 21:50:13|INFO] Focus mode off.
+[2026-02-25 21:50:14|INFO] DynamicIsland.FocusPanel is requesting to hide
+[2026-02-25 21:50:19|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-02-25 21:50:20|INFO] Focus mode on.
+[2026-02-25 21:50:22|INFO] Focus mode off.
+[2026-02-25 21:50:23|INFO] DynamicIsland.FocusPanel is requesting to hide
+[2026-02-25 21:51:35|INFO] Updated Media Label: 気ままな天使たち - わたてん☆5
+[2026-02-25 21:55:41|INFO] Updated Media Label: はじまりいろスプラッシュ - 大宮忍 (CV: 西明日香)
+[2026-02-25 21:59:38|INFO] Updated Media Label: シュワシュワ - Three∞Loop
+[2026-02-25 22:04:02|INFO] Updated Media Label: Eyecatch～jump!～ - 川田瑠夏
+[2026-02-25 22:04:11|INFO] Updated Media Label: EyeCatch I - 伊賀 拓郎
+[2026-02-25 22:04:20|INFO] Updated Media Label: Memories - こみっくがーるず (赤尾ひかる, 本渡楓, 大西沙織, 高橋李依)
+[2026-02-25 22:08:35|INFO] Updated Media Label: センチメンタルクライシス - halca
+[2026-02-25 22:12:38|INFO] Updated Media Label: きらきらエブリディ - チマメ隊
+[2026-02-25 22:16:23|INFO] Updated Media Label: 恋のうた (feat. 由崎司) - Yunomi, 鬼頭明里
+[2026-02-25 22:18:16|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-02-25 22:18:18|INFO] Focus mode on.
+[2026-02-25 22:18:19|INFO] Focus mode off.
+[2026-02-25 22:18:21|INFO] DynamicIsland.FocusPanel is requesting to hide
+[2026-02-25 22:19:53|INFO] Updated Media Label: アイキャッチA - 川田瑠夏
+[2026-02-25 22:20:02|INFO] Updated Media Label: アイキャッチB - 川田瑠夏
+[2026-02-25 22:20:08|INFO] Updated Media Label: 夢色パレード - Rhodanthe*
+[2026-02-25 22:22:52|INFO] Mouse press received
+[2026-02-25 22:22:52|INFO] Mouse press received
+[2026-02-25 22:24:14|INFO] Updated Media Label: 114514 - Misty Rain, Drifting Snow
+[2026-02-25 22:27:53|INFO] Updated Media Label: きらめきカフェタイム - ココア (CV: 佐倉綾音), チノ (CV: 水瀬いのり), リゼ (CV: 種田梨沙)
+[2026-02-25 22:32:08|INFO] Updated Media Label: 日常デコレーション - Petit Rabbit's
+[2026-02-25 22:36:29|INFO] Updated Media Label: アイキャッチ1 - 川田瑠夏
+[2026-02-25 22:36:38|INFO] Updated Media Label: アイキャッチ2 - 川田瑠夏
+[2026-02-25 22:36:50|INFO] Updated Media Label: 魔法少女チノ - チノ (CV: 水瀬いのり)
+[2026-02-25 22:40:41|INFO] Updated Media Label: 小さな恋のうた - 高木さん (CV: 高橋李依)
+[2026-02-25 22:44:47|INFO] Updated Media Label: 青き此方 - YURiKA
+[2026-02-25 22:49:41|INFO] Updated Media Label: 涙はみせない - こみっくがーるず (赤尾ひかる, 本渡楓, 大西沙織, 高橋李依)
+[2026-02-25 22:53:50|INFO] Updated Media Label: アイキャッチ1 - 末廣健一郎
+[2026-02-25 22:53:59|INFO] Updated Media Label: Jumping!! - Rhodanthe*
+[2026-02-25 22:58:02|INFO] Updated Media Label: 気ままな天使たち - わたてん☆5
+[2026-02-25 23:02:08|INFO] Updated Media Label: はじまりいろスプラッシュ - 大宮忍 (CV: 西明日香)
+[2026-02-25 23:06:22|INFO] DynamicIsland.FocusPanel is requesting to show
+[2026-02-25 23:06:24|INFO] Focus mode on.
+[2026-02-25 23:06:28|INFO] Focus mode off.
+[2026-02-25 23:06:30|INFO] DynamicIsland.FocusPanel is requesting to hide
+[2026-04-13 23:27:18|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:27:18|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:27:18|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:27:18|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:27:18|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-04-13 23:27:18|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:27:18|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:27:19|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:27:19|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:27:19|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:27:19|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:27:19|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:27:19|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:27:21|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-04-13 23:27:21|INFO] Updated Media Label: Hoshizora Prologue - Shion Hinano
+[2026-04-13 23:29:24|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:29:24|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:29:24|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:29:24|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:29:24|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-04-13 23:29:24|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:29:24|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:29:25|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:29:25|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:29:25|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:29:25|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:29:25|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:29:25|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:29:27|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-04-13 23:29:27|INFO] Updated Media Label: Hoshizora Prologue - Shion Hinano
+[2026-04-13 23:30:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:30:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:30:06|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:30:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:30:06|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-04-13 23:30:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:30:06|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:30:07|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:30:07|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:30:07|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:30:07|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:30:07|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:30:07|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:30:09|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-04-13 23:30:09|INFO] Updated Media Label: Hoshizora Prologue - Shion Hinano
+[2026-04-13 23:32:21|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:32:21|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:32:21|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:32:21|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:32:21|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-04-13 23:32:21|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:32:21|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:32:22|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:32:22|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:32:22|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:32:22|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:32:22|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:32:22|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:32:24|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-04-13 23:32:24|INFO] Updated Media Label: Hoshizora Prologue - Shion Hinano
+[2026-04-13 23:32:37|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:33:13|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:33:13|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:33:13|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:33:13|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:33:13|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-04-13 23:33:13|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:33:13|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:33:14|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:33:14|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:33:14|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:33:14|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:33:14|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:33:14|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:33:14|INFO] Initialized.
+[2026-04-13 23:33:16|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-04-13 23:33:16|INFO] Updated Media Label: Hoshizora Prologue - Shion Hinano
+[2026-04-13 23:33:23|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:34:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:00|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:34:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:00|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-04-13 23:34:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:00|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:34:01|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:01|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:34:01|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:01|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:34:01|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:01|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:34:01|INFO] Initialized.
+[2026-04-13 23:34:03|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-04-13 23:34:03|INFO] Updated Media Label: Hoshizora Prologue - Shion Hinano
+[2026-04-13 23:34:19|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:19|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:19|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:34:19|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:19|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-04-13 23:34:19|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:19|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:34:20|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:20|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:34:20|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:20|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:34:20|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:34:20|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:34:20|INFO] Initialized.
+[2026-04-13 23:34:22|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-04-13 23:34:22|INFO] Updated Media Label: Hoshizora Prologue - Shion Hinano
+[2026-04-13 23:34:28|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:34:41|INFO] Mouse press received
+[2026-04-13 23:34:42|INFO] Mouse press received
+[2026-04-13 23:34:42|INFO] Mouse press received
+[2026-04-13 23:35:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:06|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:35:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:06|INFO] Registered: DynamicIsland.MediaPanel - 1
+[2026-04-13 23:35:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:06|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:35:07|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:07|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:35:07|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:07|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:35:07|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:07|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:35:07|INFO] Initialized.
+[2026-04-13 23:35:09|INFO] DynamicIsland.MediaPanel is requesting to show
+[2026-04-13 23:35:09|INFO] Updated Media Label: Hoshizora Prologue - Shion Hinano
+[2026-04-13 23:35:36|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:36|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:36|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:35:36|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:36|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:35:37|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:37|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:35:37|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:37|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:35:37|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:35:37|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:35:37|INFO] Initialized.
+[2026-04-13 23:35:52|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:37:26|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:37:26|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:37:26|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:37:26|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:37:26|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:37:27|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:37:27|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:37:27|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:37:27|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:37:27|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:37:27|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:37:27|INFO] Initialized.
+[2026-04-13 23:38:00|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:38:53|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:38:53|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:38:53|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:38:53|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:38:53|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:38:54|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:38:54|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:38:54|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:38:54|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:38:54|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:38:54|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:38:54|INFO] Initialized.
+[2026-04-13 23:39:02|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:40:04|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:40:04|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:40:04|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:40:04|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:40:04|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:40:05|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:40:05|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:40:05|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:40:05|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:40:05|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:40:05|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:40:05|INFO] Initialized.
+[2026-04-13 23:40:19|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:41:05|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:05|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:05|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:41:05|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:05|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:41:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:06|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:41:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:06|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:41:06|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:06|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:41:06|INFO] Initialized.
+[2026-04-13 23:41:11|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:41:22|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:22|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:22|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:41:22|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:22|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:41:23|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:23|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:41:23|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:23|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:41:23|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:41:23|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:41:23|INFO] Initialized.
+[2026-04-13 23:41:27|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:42:07|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:42:07|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:42:07|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:42:07|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:42:07|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:42:08|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:42:08|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:42:08|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:42:08|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:42:08|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:42:08|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:42:08|INFO] Initialized.
+[2026-04-13 23:42:12|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:43:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:00|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:43:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:00|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:43:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:00|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:43:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:00|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:43:00|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:00|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:43:00|INFO] Initialized.
+[2026-04-13 23:43:09|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:43:23|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:23|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:23|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:43:23|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:23|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:43:24|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:24|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:43:24|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:24|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:43:24|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:43:24|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:43:24|INFO] Initialized.
+[2026-04-13 23:43:28|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:44:01|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:01|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:01|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:44:01|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:01|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:44:02|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:02|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:44:02|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:02|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:44:02|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:02|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:44:02|INFO] Initialized.
+[2026-04-13 23:44:06|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:44:29|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:29|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:29|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:44:29|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:29|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:44:30|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:30|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:44:30|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:30|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:44:30|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:30|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:44:30|INFO] Initialized.
+[2026-04-13 23:44:34|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:44:51|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:51|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:51|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:44:51|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:51|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:44:52|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:52|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:44:52|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:52|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:44:52|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:44:52|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:44:52|INFO] Initialized.
+[2026-04-13 23:44:57|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:45:09|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:09|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:09|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:45:09|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:09|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:45:10|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:10|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:45:10|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:10|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:45:10|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:10|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:45:10|INFO] Initialized.
+[2026-04-13 23:45:13|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:45:45|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:45|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:45|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:45:45|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:45|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:45:46|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:46|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:45:46|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:46|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:45:46|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:45:46|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:45:46|INFO] Initialized.
+[2026-04-13 23:45:49|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:46:44|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:46:44|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:46:44|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:46:44|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:46:44|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:46:45|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:46:45|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:46:45|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:46:45|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:46:45|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:46:45|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:46:45|INFO] Initialized.
+[2026-04-13 23:46:48|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:47:02|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:47:02|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:47:02|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:47:02|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:47:02|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:47:03|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:47:03|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:47:03|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:47:03|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:47:03|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:47:03|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:47:03|INFO] Initialized.
+[2026-04-13 23:47:09|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:51:55|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:51:55|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:51:55|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:51:55|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:51:55|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:51:56|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:51:56|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:51:56|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:51:56|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:51:56|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:51:56|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:51:56|INFO] Initialized.
+[2026-04-13 23:52:12|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:57:57|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:57:57|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:57:57|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:57:57|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:57:57|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:57:58|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:57:58|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:57:58|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:57:58|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:57:58|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:57:58|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:57:58|INFO] Initialized.
+[2026-04-13 23:58:03|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-13 23:59:36|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:36|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:36|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:59:36|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:36|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:59:37|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:37|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:59:37|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:37|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:59:37|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:37|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:59:37|INFO] Initialized.
+[2026-04-13 23:59:45|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:45|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:45|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-13 23:59:45|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:45|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-13 23:59:46|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:46|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-13 23:59:46|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:46|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-13 23:59:46|DEBUG] Using proactor: IocpProactor
+[2026-04-13 23:59:46|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-13 23:59:46|INFO] Initialized.
+[2026-04-13 23:59:55|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:04:53|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:04:53|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:04:53|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:04:53|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:04:53|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:04:54|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:04:54|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:04:54|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:04:54|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:04:54|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:04:54|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:04:54|INFO] Initialized.
+[2026-04-14 00:05:08|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:05:15|INFO] Mouse press received
+[2026-04-14 00:14:31|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:14:32|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:14:32|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:14:32|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:14:32|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:14:33|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:14:33|ERROR] Failed to load config: [Errno 2] No such file or directory: './Extensions/ArgumentConfig.json'
+Traceback (most recent call last):
+  File "<string>", line 205, in loadConfig
+FileNotFoundError: [Errno 2] No such file or directory: './Extensions/ArgumentConfig.json'
+[2026-04-14 00:14:33|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:14:33|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:14:33|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:14:33|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:14:33|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:14:33|INFO] Initialized.
+[2026-04-14 00:15:14|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:15:14|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:15:14|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:15:14|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:15:14|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:15:15|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:16:02|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:16:02|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:16:02|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:16:02|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:16:02|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:16:03|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:16:04|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:16:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:16:04|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:16:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:16:04|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:16:04|INFO] Initialized.
+[2026-04-14 00:16:08|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:16:11|INFO] Mouse press received
+[2026-04-14 00:16:12|INFO] Mouse press received
+[2026-04-14 00:16:12|INFO] Mouse press received
+[2026-04-14 00:21:16|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:21:16|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:21:16|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:21:16|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:21:16|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:21:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:21:17|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:21:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:21:17|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:21:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:21:17|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:21:17|INFO] Initialized.
+[2026-04-14 00:21:23|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:21:51|INFO] Mouse press received
+[2026-04-14 00:21:54|INFO] Mouse press received
+[2026-04-14 00:35:34|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:35:34|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:35:34|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:35:34|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:35:34|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:35:35|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:35:35|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:35:35|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:35:35|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:35:35|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:35:35|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:35:35|INFO] Initialized.
+[2026-04-14 00:35:41|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:36:31|INFO] Mouse press received
+[2026-04-14 00:36:32|INFO] Mouse press received
+[2026-04-14 00:36:32|INFO] Mouse press received
+[2026-04-14 00:36:33|INFO] Mouse press received
+[2026-04-14 00:36:58|INFO] Mouse press received
+[2026-04-14 00:38:00|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:38:00|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:38:00|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:38:00|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:38:00|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:38:01|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:38:01|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:38:01|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:38:01|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:38:01|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:38:01|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:38:01|INFO] Initialized.
+[2026-04-14 00:38:07|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:38:26|INFO] Mouse press received
+[2026-04-14 00:40:51|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:40:51|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:40:51|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:40:51|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:40:51|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:40:52|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:40:52|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:40:52|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:40:52|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:40:52|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:40:52|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:40:52|INFO] Initialized.
+[2026-04-14 00:40:56|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:41:18|INFO] Mouse press received
+[2026-04-14 00:44:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:44:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:44:17|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:44:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:44:17|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:44:18|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:44:18|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:44:18|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:44:18|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:44:18|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:44:18|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:44:18|INFO] Initialized.
+[2026-04-14 00:44:29|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:49:59|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:49:59|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:49:59|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:49:59|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:49:59|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:50:00|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:50:00|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:50:00|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:50:00|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:50:00|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:50:00|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:50:00|INFO] Initialized.
+[2026-04-14 00:50:06|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:50:18|INFO] Mouse press received
+[2026-04-14 00:50:23|INFO] Mouse press received
+[2026-04-14 00:51:16|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:51:16|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:51:16|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:51:16|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:51:16|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:51:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:51:17|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:51:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:51:17|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:51:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:51:17|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:51:17|INFO] Initialized.
+[2026-04-14 00:51:22|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:52:09|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:52:09|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:52:09|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:52:09|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:52:09|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:52:10|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:52:10|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:52:10|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:52:10|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:52:10|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:52:10|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:52:10|INFO] Initialized.
+[2026-04-14 00:52:16|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:52:24|INFO] Mouse press received
+[2026-04-14 00:52:25|INFO] Mouse press received
+[2026-04-14 00:53:21|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:53:21|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:53:21|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 00:53:21|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:53:21|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 00:53:22|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:53:22|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 00:53:22|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:53:22|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 00:53:22|DEBUG] Using proactor: IocpProactor
+[2026-04-14 00:53:22|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 00:53:22|INFO] Initialized.
+[2026-04-14 00:53:27|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 00:53:50|INFO] Mouse press received
+[2026-04-14 01:01:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:01:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:01:04|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:01:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:01:04|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:01:05|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:01:05|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:01:05|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:01:05|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:01:05|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:01:05|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:01:05|INFO] Initialized.
+[2026-04-14 01:01:10|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:12:46|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:12:46|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:12:46|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:12:46|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:12:46|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:12:47|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:12:47|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:12:47|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:12:47|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:12:47|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:12:47|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:12:47|INFO] Initialized.
+[2026-04-14 01:12:51|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:13:23|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:13:23|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:13:23|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:13:23|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:13:23|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:13:24|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:13:24|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:13:24|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:13:24|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:13:24|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:13:24|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:13:24|INFO] Initialized.
+[2026-04-14 01:13:31|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:13:46|INFO] Mouse press received
+[2026-04-14 01:13:47|INFO] Mouse press received
+[2026-04-14 01:13:49|INFO] Mouse press received
+[2026-04-14 01:13:53|INFO] Mouse press received
+[2026-04-14 01:15:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:15:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:15:17|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:15:17|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:15:17|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:15:18|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:15:18|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:15:18|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:15:18|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:15:18|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:15:18|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:15:18|INFO] Initialized.
+[2026-04-14 01:15:24|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:22:32|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:22:32|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:22:32|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:22:32|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:22:32|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:22:33|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:22:34|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:22:34|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:22:34|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:22:34|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:22:34|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:22:34|INFO] Initialized.
+[2026-04-14 01:23:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:23:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:23:04|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:23:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:23:04|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:23:05|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:23:06|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:23:06|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:23:06|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:23:06|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:23:06|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:23:06|INFO] Initialized.
+[2026-04-14 01:23:09|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:23:59|INFO] Mouse press received
+[2026-04-14 01:31:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:31:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:31:04|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:31:04|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:31:04|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:31:05|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:31:06|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:31:06|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:31:06|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:31:06|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:31:06|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:31:06|INFO] Initialized.
+[2026-04-14 01:31:11|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:33:49|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:33:49|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:33:49|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:33:49|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:33:49|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:33:50|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:33:50|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:33:50|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:33:50|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:33:50|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:33:50|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:33:50|INFO] Initialized.
+[2026-04-14 01:33:56|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:37:11|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:37:11|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:37:11|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:37:11|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:37:11|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:37:12|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:37:12|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:37:12|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:37:12|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:37:12|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:37:12|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:37:12|INFO] Initialized.
+[2026-04-14 01:37:16|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:38:00|INFO] Mouse press received
+[2026-04-14 01:41:09|INFO] Mouse press received
+[2026-04-14 01:41:46|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:41:46|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:41:46|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:41:46|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:41:46|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:41:47|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:41:47|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:41:47|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:41:47|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:41:47|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:41:47|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:41:47|INFO] Initialized.
+[2026-04-14 01:43:08|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:43:08|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:43:08|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:43:08|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:43:08|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:43:09|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:43:09|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:43:09|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:43:09|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:43:09|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:43:09|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:43:09|INFO] Initialized.
+[2026-04-14 01:43:13|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:44:27|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:44:27|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:44:27|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:44:27|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:44:27|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:44:28|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:44:28|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:44:28|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:44:28|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:44:28|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:44:28|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:44:28|INFO] Initialized.
+[2026-04-14 01:44:34|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
+[2026-04-14 01:45:57|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:45:57|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:45:57|INFO] Registered: DynamicIsland.MainPanel - 1000000
+[2026-04-14 01:45:57|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:45:57|INFO] Registered: DynamicIsland.FocusPanel - 999999
+[2026-04-14 01:45:58|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:45:58|INFO] Registered: ArgumentTimer.ArgumentTimerPanel - 8
+[2026-04-14 01:45:58|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:45:58|INFO] Registered: ClassScheduler.SchedulePanel - 5
+[2026-04-14 01:45:58|DEBUG] Using proactor: IocpProactor
+[2026-04-14 01:45:58|INFO] Registered: CountdownPanel.SchedulePanel - 6
+[2026-04-14 01:45:58|INFO] Initialized.
+[2026-04-14 01:46:04|INFO] ArgumentTimer.ArgumentTimerPanel is requesting to show
